@@ -12,11 +12,31 @@
   <div id="app"></div>
   <script>
     window.$docsify = {
-      name: '',
-      repo: ''
+      name: 'Essay-Note',
+      repo: 'https://github.com/fare-xzy/fare-xzy.github.io', // 右上角会有一个github图标
+      maxLevel: 2,
+      auto2top: true,
+      coverpage: true,
+      // logo: '/_media/icon.svg', // logo
+      themeColor: '#095552',
+      // executeScript: true,
+      formatUpdated: '{MM}/{DD} {HH}:{mm}'
     }
   </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
-</body>
+  <!--代码高亮-->
+  <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-java.min.js"></script></body>
+  <!--VUE-->
+  <script src="//cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <!--代码块复制插件-->
+  <script src="//cdn.jsdelivr.net/npm/docsify-copy-code/dist/docsify-copy-code.min.js"></script>
+  <!-- 图片缩放插件 -->
+  <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/zoom-image.min.js"></script>
+  <!--搜索插件-->
+  <script src="//polyfill.io/v3/polyfill.min.js?features=String.prototype.normalize"></script>
+  <!--分页插件-->
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+  <!--统计访问量插件-->
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 </html>
