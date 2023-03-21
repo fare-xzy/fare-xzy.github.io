@@ -27,7 +27,7 @@ vim redis.config
 
 #### 单机
 
-```
+```apacheconf
 # 限制连入ip
 bind * -::*
 # 端口
@@ -40,7 +40,7 @@ requirepass 111111
 
 #### 主从
 
-```
+```apacheconf
 ##从机配置文件，主机配置文件不动
 # 限制连入ip
 bind * -::*

@@ -1,6 +1,6 @@
 # Network
 
-###### 网络连接中的半连接和已完成连接
+## 网络连接中的半连接和已完成连接
 
 > `半连接`：服务端收到客户端`syn`后,将连接放入半连接队列。如果半连接队列已满会丢弃，客户端报错`connection time out`
 > 
@@ -10,6 +10,8 @@
 > 
 > `ack:`在TCP报文段中，字段ACK=1时，确认号字段才有效。TCP规定，在连接建立后所有传送的报文段都必须把ACK置1
 
-###### JDK和TLS协议的版本关系
+## JDK和TLS协议的版本关系
 
 ![](https://img-blog.csdnimg.cn/20181226233209538.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L01lbG9fRmVuZ1poaQ==,size_16,color_FFFFFF,t_70)
+
+###### TCP
