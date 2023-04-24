@@ -1,12 +1,11 @@
-* 基础篇
+* Code
 
-  * 面向对象
+* Error
 
-    * 什么是面向对象
+* Study
+  
+  * Linux
+  
+    * [操作系统内核参数](/docs/study/Linux/sysctl.md)
 
-      * [面向对象与面向过程](/basics/object-oriented/object-oriented-vs-procedure-oriented.md)
-
-      * [面向对象的三大基本特征](/basics/object-oriented/characteristics.md)
-
-      * [面向对象的五大基本原则](/basics/object-oriented/principle.md)
             
