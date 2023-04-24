@@ -15,13 +15,25 @@
       name: 'Essay-Note',
       repo: 'https://github.com/fare-xzy/fare-xzy.github.io', // 右上角会有一个github图标
       loadSidebar: true,
-      maxLevel: 2,
-      auto2top: true,
-      coverpage: true,
-      // logo: '/_media/icon.svg', // logo
-      themeColor: '#095552',
-      // executeScript: true,
-      formatUpdated: '{MM}/{DD} {HH}:{mm}'
+      subMaxLevel: 3,
+      autoHeader: true,
+      search: {
+        paths: 'auto',
+        placeholder: '🔍 搜索 ',
+        noData: '哎呀，没有找到呀！ ',
+        // Headline depth, 1 - 6
+        depth: 3
+      },
+      copyCode: {
+        buttonText : '复制',
+        errorText  : 'Error',
+        successText: 'OK!'
+      },
+      pagination: {
+        previousText: '上一章',
+        nextText: '下一章',
+      },
+      coverpage: true
     }
   </script>
   <!-- Docsify v4 -->
