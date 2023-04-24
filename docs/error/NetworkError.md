@@ -1,5 +1,6 @@
-`java.net.SocketException: Connection reset` 是一个常见的异常，通常表示在尝试与远程主机建立连接时发生了错误，该连接可能已被重置或关闭。
+`java.net.SocketException: Connection reset` 
 
+通常表示在尝试与远程主机建立连接时发生了错误，该连接可能已被重置或关闭。
 这个异常通常发生在以下几种情况下：
 
 1. 远程主机突然关闭了连接，导致客户端和服务器之间的通信被中断。
