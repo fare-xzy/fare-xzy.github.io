@@ -6,6 +6,6 @@
   
   * Linux
   
-    * [操作系统内核参数](/docs/study/Linux/sysctl.md)
+    * [操作系统内核参数](/study/Linux/sysctl.md)
 
             
