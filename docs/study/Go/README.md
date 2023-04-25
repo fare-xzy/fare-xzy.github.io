@@ -1,12 +1,12 @@
 # GoLang
 
-## 优秀的go语言程序
+* 优秀的go语言程序
 
 > [Go 应用程序项目的基本布局](https://github.com/golang-standards/project-layout/blob/master/README_zh.md)
 > 
 > [一个Go库的汇总](https://github.com/avelino/awesome-go)
 
-## 优秀的库
+* 优秀的库
 
 > https://github.com/traefik/traefik  一种现代HTTP反向代理和负载均衡器
 > 
