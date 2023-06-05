@@ -12,7 +12,7 @@
 
     * [Assembly](study/Other/Assembly.md)
   * 标准
-    * [Standard](study/Standard/ANS1.md))
+    * [Standard](study/Standard/ANS1.md)
     
   * [Go](study/Go/README.md)
 
