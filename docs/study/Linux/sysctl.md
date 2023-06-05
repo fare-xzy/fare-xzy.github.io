@@ -1,4 +1,4 @@
- CentOS 7 中影响 TCP 请求的 `sysctl` 参数及其解释：
+# CentOS 7 中影响 TCP 请求的 `sysctl` 参数及其解释：
 
 1. `net.ipv4.tcp_syncookies`
 - 解释：开启 SYN cookie，防止 SYN Flood 攻击。
@@ -48,9 +48,6 @@
 - 解释：指定系统最多保留多少个 TIME_WAIT 状态的连接。
 - 默认值：262144
 - 推荐值：65536
-
-继续：
-
 13. `net.ipv4.tcp_synack_retries`
 - 解释：指定 TCP 握手建立连接的 SYN-ACK 尝试次数。
 - 默认值：5
@@ -100,3 +97,11 @@
 4. `net.ipv4.tcp_keepalive_intvl`：指定 TCP Keepalive 探测包发送间隔时间。
 5. `net.ipv4.tcp_keepalive_probes`：指定 TCP Keepalive 探测包发送的次数。
 6. `net.ipv4.tcp_fin_timeout`：指定连接中断后，内核在释放资源前等待的时间。
+
+# OpenEuler22.03-LTS-SP1中影响 TCP 请求的 `sysctl` 参数及其解释
+
+1. `kernel.sched_min_granularity_ns`：这个参数控制任务切换的最小时间间隔。您可以尝试减小该值，以提高线程的响应性。例如，将其设置为较小的值如 1000000（1毫秒）。
+
+2. `kernel.sched_wakeup_granularity_ns`：这个参数控制任务从睡眠状态唤醒的时间间隔。较小的值可以提高任务唤醒的精度。您可以尝试减小该值，例如将其设置为 1000000（1毫秒）。
+
+3. `kernel.sched_latency_ns`：这个参数控制任务切换的延迟时间。较小的值可以提高任务的响应速度。您可以尝试减小该值，例如将其设置为 2000000（2毫秒）。
