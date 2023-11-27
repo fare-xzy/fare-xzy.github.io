@@ -2,7 +2,7 @@
   
   * Go
     * leetcode
-      * [1-两数之和.md](code%2Fgo%2Fleetcode%2Feasy%2F1-%C1%BD%CA%FD%D6%AE%BA%CD.md)
+      * [1-两数之和.go](/code/go/leetcode/easy/1-两数之和.md)
 
 * Error
 
