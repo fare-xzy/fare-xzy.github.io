@@ -113,6 +113,48 @@ module.exports = {
 
 ### 常用内容
 
+1. 模板语法： {{  }}
 
+2. 计算属性： **`computed`**
+
+3. 监听属性：**`watch`**
+
+4. 响应式变量：**`data`**
+
+5. 属性传递：**`props`** **`provide`** **`inject`**
+
+6. 函数：**`methods`**
+
+7. 生命周期函数：**`created`** **`mounted`** **`destroyed`**
+
+8. 组件注册：**`components`**
+
+9. 全局配置：**`errorHandler`** 
+
+10. 常用指令：
+    
+    1. **`v-show`** 
+    
+    2. **`v-if`** 
+    
+    3. **`v-else`** 
+    
+    4.  **`v-else-if`** 
+    
+    5. `v-for` 
+    
+    6. **`v-on`** 
+    
+    7. **`v-bind`** 
+    
+    8. **`v-model`** 
+    
+    9. **`v-slot`** 
+
+11. 元素引用：**`ref`**
+
+12. 插槽：**`slot`**
+
+13. 自定义事件：**`$emit`**
 
 # Vue3
