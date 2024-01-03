@@ -105,9 +105,9 @@ module.exports = {
 
 ### 生态
 
-- [VueRouter.md](VueRouter.md)
+- [VueRouter](study/Web/VueRouter.md)
 
-- [Vuex.md](Vuex.md)
+- [Vuex](study/Web/Vuex.md)
 
 - [ Axios](https://axios-http.com/zh/docs/intro)
 
