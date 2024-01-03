@@ -52,8 +52,8 @@
  
   * Web
     
-    * [Vue.md](study/Web/Vue.md)
-    * 
+    * [Vue](study/Web/Vue.md)
+
   * Windows
     
     * [Windows](study/Windows/README.md)
