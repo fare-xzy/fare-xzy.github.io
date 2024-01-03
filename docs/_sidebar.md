@@ -53,6 +53,8 @@
   * [Web](study/Web/README.md)
     
     * [Vue](study/Web/Vue.md)
+    * [VueRouter](study/Web/VueRouter.md)
+    * [Vuex](study/Web/Vuex.md)
   
   * Windows
     
