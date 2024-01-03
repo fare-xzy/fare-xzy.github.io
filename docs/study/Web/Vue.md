@@ -105,9 +105,9 @@ module.exports = {
 
 ### 生态
 
-- [Vue Router](https://v3.router.vuejs.org/zh/)
+- [VueRouter.md](VueRouter.md)
 
-- [Vuex](https://vuex.vuejs.org/zh/)
+- [Vuex.md](Vuex.md)
 
 - [ Axios](https://axios-http.com/zh/docs/intro)
 
