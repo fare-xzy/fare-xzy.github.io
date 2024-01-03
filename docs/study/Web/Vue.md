@@ -1,7 +1,117 @@
 # Vue2
 
+### 创建
 
+```bash
+# 安装vue-cli
+npm install -g @vue/cli
+yarn global add @vue/cli
 
+# 创建项目
+vue create hello-world
+```
+
+```json
+// vue.config.js
+
+module.exports = {
+  // 部署应用时的基本 URL
+  publicPath: process.env.NODE_ENV === 'production' ? '/production-sub-path/' : '/',
+
+  // 构建时的输出目录
+  outputDir: 'dist',
+
+  // 静态资源目录 (js, css, img, fonts)
+  assetsDir: 'static',
+
+  // 是否开启eslint保存检测，有效值：true | false | 'error'
+  lintOnSave: true,
+
+  // 是否使用包含运行时编译器的Vue核心的构建
+  runtimeCompiler: false,
+
+  // Babel配置
+  // transpileDependencies: [],
+
+  // 生产环境source map
+  productionSourceMap: true,
+
+  // CSS相关配置
+  css: {
+    // 是否使用css分离插件 ExtractTextPlugin
+    extract: true,
+
+    // 开启 CSS source maps?
+    sourceMap: false,
+
+    // css预设器配置项
+    loaderOptions: {
+      css: {},
+      sass: {}
+    },
+
+    // 启用 CSS modules for all css / pre-processor files.
+    modules: false
+  },
+
+  // webpack-dev-server配置
+  devServer: {
+    open: process.platform === 'darwin',
+    host: '0.0.0.0',
+    port: 8080,
+    https: false,
+    hotOnly: false,
+    // 代理配置
+    proxy: {
+      '/api': {
+        target: '<url>',
+        ws: true,
+        changeOrigin: true
+      }
+    },
+    // 在服务启动之前执行的自定义函数
+    before: app => {}
+  },
+
+  // 多页面配置
+  pages: {
+    index: {
+      entry: 'src/main.js',
+      template: 'public/index.html',
+      filename: 'index.html',
+      title: 'Index Page',
+      chunks: ['chunk-vendors', 'chunk-common', 'index']
+    },
+    // 可以在这里添加其他页面的配置
+  },
+
+  // eslint-loader配置
+  chainWebpack: config => {
+    config.module
+      .rule('eslint')
+      .use('eslint-loader')
+      .tap(options => {
+        options.fix = true; // 自动修复eslint错误
+        return options;
+      });
+  },
+
+  // 第三方插件配置
+  pluginOptions: {
+    // ...
+  }
+};
+```
+
+### 生态
+
+- [Vue Router](https://v3.router.vuejs.org/zh/)
+
+- [Vuex](https://vuex.vuejs.org/zh/)
+
+- [ Axios](https://axios-http.com/zh/docs/intro)
+
+### 常用内容
 
 
 
