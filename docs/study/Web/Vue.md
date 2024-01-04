@@ -111,6 +111,12 @@ module.exports = {
 
 - [ Axios](https://axios-http.com/zh/docs/intro)
 
+- [Ant Design Vue (antdv.com)](https://www.antdv.com/components/overview-cn)
+
+- [Element - 网站快速成型工具](https://element.eleme.cn/#/zh-CN)
+
+- [PrimeVUE (primefaces.org)](https://www.primefaces.org/primevue-v2/#/)
+
 ### 常用内容
 
 1. 模板语法： {{  }}
@@ -139,7 +145,7 @@ module.exports = {
     
     3. **`v-else`** 
     
-    4.  **`v-else-if`** 
+    4. **`v-else-if`** 
     
     5. `v-for` 
     
