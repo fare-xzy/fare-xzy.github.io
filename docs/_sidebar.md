@@ -39,6 +39,7 @@
   * Other
     
     * [Assembly](study/Other/Assembly.md)
+    * [slowhttptest](study/Other/slowhttptest.md)
   
   * Regular
   
