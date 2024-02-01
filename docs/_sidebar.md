@@ -1,8 +1,4 @@
-* Code
-  
-  * Go
-    * leetcode
-      * [1-两数之和.go](/code/go/leetcode/easy/1-两数之和.md)
+* 
 
 * Error
   
