@@ -3,7 +3,7 @@ SpringBoot
 
 * 一个深入的Spring Boot学习大纲应当更侧重于框架的内部工作原理、高级特性的探究以及与其他技术集成的最佳实践。以下是一个更深入学习Spring Boot的详细学习大纲：
   
-  1. [Spring Boot内部原理](SpringBoot_01.md)
+  1. [Spring Boot内部原理](/study/Language/Java/springboot/SpringBoot_01.md)
      1. Spring Boot自动配置深度分析
      2. Spring Boot条件注解的工作机制（`@ConditionalOnClass`、`@ConditionalOnBean`等）
      3. Spring Boot启动流程详解
