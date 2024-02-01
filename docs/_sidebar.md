@@ -32,7 +32,7 @@
     
     * Java
       
-      * [springboot](/study/Language/java/springboot/README.md)
+      * [springboot](/study/Language/Java/springboot/README.md)
   
   * Linux
     
