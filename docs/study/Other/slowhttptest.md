@@ -10,15 +10,13 @@ HTTP Post慢速DoS攻击第一次在技术社区被正式披露是2012年的OWAS
 
 > [shekyan/slowhttptest: Application Layer DoS attack simulator (github.com)](https://github.com/shekyan/slowhttptest)
 
-
-
 ### 使用docker
 
 ```shell
 #拉取官方最新版本
 docker pull shekyan/slowhttptest:latest
 #启动测试
-docker run -i -t shekyan/slowhttptest -c 400 -H -i 10 -r 200 -t GET -u https://10.0.12.6:9443/ -x 24 -p 3 -l 200
+docker run -i -t shekyan/slowhttptest -c 1000 -H -i 110 -r 200 -t GET -u http://192.168.33.130:8090/ -x 24 -p 3 -l 200
 #重要参数说明  -c 400 -H -i 10 -r 200 -t GET -u https://10.0.12.6:9443/ -x 24 -p 3 -l 200
 -u 要验证的地址，https://10.0.12.6:9443/ 如果在本机验证，因为是docker环境动不要使用localhost，请使用主机的ip地址
 -c 400:总连接数
@@ -28,6 +26,12 @@ docker run -i -t shekyan/slowhttptest -c 400 -H -i 10 -r 200 -t GET -u https://1
 -x 24:发送的最大数据长度24
 -p 3∶等待3秒来确定DoS攻击是否成功
 -l 200:测试持续时间
+# 慢速消息正文模式下的使用示例:
+docker run -i -t shekyan/slowhttptest -c 1000 -B -i 110 -r 200 -s 8192 -t FAKEVERB -u http://192.168.33.130:8090/ -x 10 -p 3
+
+
+# 慢速读取
+docker run -i -t shekyan/slowhttptest -c 1000 -X -r 1000 -w 10 -y 20 -n 5 -z 32 -u http://192.168.33.130:8090/ -p 5 -l 350
 ```
 
 ### 结果说明
@@ -36,5 +40,3 @@ docker run -i -t shekyan/slowhttptest -c 400 -H -i 10 -r 200 -t GET -u https://1
 
 1. 测试发起的连接较少，不能以“service available”参数作为依据。
 2. 若结果为“Exit status: No open connections left”，则不存在漏洞
-
-
