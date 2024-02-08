@@ -6,7 +6,7 @@ SpringBoot
   1. [Spring Boot内部原理](/study/Language/Java/springboot/SpringBoot_01.md)
      1. Spring Boot自动配置深度分析
      2. Spring Boot条件注解的工作机制（`@ConditionalOnClass`、`@ConditionalOnBean`等）
-     3. Spring Boot启动流程详解
+     3. [Spring Boot启动流程详解](/study/Language/Java/springboot/SpringBoot_01_03.md)
      4. 手动实现自动配置
      5. 对Spring Boot工作原理的源码分析
   2. **高级配置技巧**
