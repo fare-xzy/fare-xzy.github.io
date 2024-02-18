@@ -27,3 +27,15 @@ fn()
 
 ④改名导出：export { name as newName }
 
+```ts
+// ! 非空断言，进行判断
+// ? 问号代表参数可以为空
+// 例如
+interface testA {
+    a?: string
+}
+const aValue = {} as testA
+
+let getb = aValue!.b
+```
+
