@@ -60,4 +60,58 @@ func main() {
 ```
 
 这个函数`permute`会生成传入数字的所有可能排列。它用到了回溯算法的基本思想：通过 `backtrack` 函数适时地维护和回溯状态，以遍历解空间树的所有分支。
-希望今天的算法小技巧能帮你解决一些问题，记得继续关注，明天我会提供一个新的技巧或思想！
+
+## 分治法
+
+分治法是一种解决问题的策略，它将原问题分解成若干个规模较小但类似于原问题的子问题，递归地解决这些子问题，然后再合并这些子问题的解以产生原问题的解。
+
+在Go语言中，我们可以使用分治法来解决一个经典的问题，如快速排序。以下是快速排序的示例代码：
+
+```go
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"time"
+)
+
+func quickSort(arr []int) []int {
+	if len(arr) < 2 {
+		return arr
+	}
+
+	left, right := 0, len(arr)-1
+	// 随机选择一个元素作为我们的"枢轴"
+	pivotIndex := rand.Int() % len(arr)
+
+	arr[pivotIndex], arr[right] = arr[right], arr[pivotIndex]
+
+	for i, _ := range arr {
+		if arr[i] < arr[right] {
+			arr[left], arr[i] = arr[i], arr[left]
+			left++
+		}
+	}
+
+	arr[left], arr[right] = arr[right], arr[left]
+
+	quickSort(arr[:left])
+	quickSort(arr[left+1:])
+
+	return arr
+}
+
+func main() {
+	// 初始化随机数种子
+	rand.Seed(time.Now().UnixNano())
+	
+	arr := []int{3, 6, 8, 10, 1, 2, 1}
+	fmt.Println("Original array:", arr)
+	sortedArr := quickSort(arr)
+	fmt.Println("Sorted array:", sortedArr)
+}
+```
+
+这种方式通过一个“基准”来将数组分成两个子数组，一个包含所有比基准小的元素，一个包含所有比基准大的元素，然后递归地对子数组进行排序。这是分治法的典型应用，是基于分而治之这个概念建立起来的。
+
