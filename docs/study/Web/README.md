@@ -20,7 +20,7 @@ nvm install <version>
 ```
 
 ```bash
-npm install -g cnpm --registry=https://registry.npm.taobao.org
+npm config set registry https://registry.npmmirror.com
 npm install -g yarn
 ```
 
