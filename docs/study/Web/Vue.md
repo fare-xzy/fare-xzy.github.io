@@ -164,3 +164,26 @@ module.exports = {
 13. 自定义事件：**`$emit`**
 
 # Vue3
+
+#### 常用内容
+
+1. 获取全局配置
+
+```typescript
+// 获取全局配置属性
+const instance = getCurrentInstance()
+const globalProperties = instance!.appContext.config.globalProperties
+```
+
+2. 父组件访问子组件
+
+```typescript
+<script lang="ts" setup>
+这种方式内部内容为私有，如果需要开放给外部访问需要开放授权
+
+// 暴漏给父组件
+defineExpose({
+  fileList
+})
+
+```
