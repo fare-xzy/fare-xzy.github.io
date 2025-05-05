@@ -1,2 +1,4 @@
-Go 随笔
+Go基础包-strconv
 =
+
+###  strconv.ParseInt
