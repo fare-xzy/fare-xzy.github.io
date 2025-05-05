@@ -42,7 +42,10 @@
     * [操作系统内核参数](/study/Linux/sysctl.md)
   
   * Middleware
-  
+
+  * New
+    * [新知识库](/study/New/README.md)
+
   * Other
     
     * [Assembly](study/Other/Assembly.md)
