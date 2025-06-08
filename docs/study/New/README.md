@@ -49,3 +49,6 @@ func main() {
 2. 有没有办法让 http3 兼容 http2客户端？
 
     答：可以通过在服务端配置支持 HTTP/2 或 HTTP/1.1 的方式，让 HTTP/3 连接能够被 HTTP/2 客户端使用。但这需要在服务端进行配置，而不是客户端。
+3. Springboot如何同时持http2和http3？
+
+    答：Spring Boot 可以通过配置 `server.http2.enabled=true` 和 `server.http3.enabled=true` 来同时支持 HTTP/2 和 HTTP/3。但需要注意的是，HTTP/3 目前还处于试验阶段，可能存在一些兼容性问题，需要谨慎使用。
