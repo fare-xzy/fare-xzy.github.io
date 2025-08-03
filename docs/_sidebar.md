@@ -52,6 +52,8 @@
     
     * [Assembly](study/Other/Assembly.md)
     * [slowhttptest](study/Other/slowhttptest.md)
+    * [Docker.md](study/Other/Docker.md)
+    * [RAID.md](study/Other/RAID.md)
   
   * Regular
   
