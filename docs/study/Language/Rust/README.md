@@ -8,8 +8,6 @@
 pub static RSA_PATH: &'static str = "../RSA.txt";
 ```
 
-
-
 ### 小问题
 
 在 Rust 中，问号 `?` 是一种处理 `Result` 和 `Option` 错误的简介方式。它被称为"问号运算符"。
@@ -17,6 +15,7 @@ pub static RSA_PATH: &'static str = "../RSA.txt";
 具体来说，问号运算符的工作原理如下：
 
 - 如果 `Result` 或 `Option` 值是 `Ok(val)` 或 `Some(val)`，它会把 `val` 解包并返回。
+
 - 如果 `Result` 或 `Option` 值是 `Err(e)` 或 `None`，它会立即从当前函数返回错误 `e` 或 `None`。
   这样可以让你的代码更简洁并保持可读性。
   例子：
@@ -60,9 +59,3 @@ fn main() {
 ```
 
 全部三种方法都可以从 `Ok` 中获取值。然而，需要注意的是，`unwrap` 和 `expect` 在面对 `Err` 时会引发 panic，导致程序崩溃。如果你需要处理可能的错误而不是直接崩溃，那么应该使用 `match` 或者 `if let`。
-
-
-
-
-
-

@@ -17,6 +17,7 @@ MySQL
 * mysql中 "%_%" 代表任意字符，如果需要使用下划线作为like 查询条件。则需要对字符进行转义"%\_%"
 
 #### 数据库编码转换
+
 ```sql
 ## 查看当前数据库编码
 SHOW VARIABLES LIKE 'character_set_%';
@@ -27,6 +28,7 @@ SHOW VARIABLES LIKE 'collation_%';
 ## 转换数据库编码
 ALTER DATABASE your_database_name CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 ```
+
 ```sql
 ## 转换表编码
 ### 使用命令输出所有表的转换语句

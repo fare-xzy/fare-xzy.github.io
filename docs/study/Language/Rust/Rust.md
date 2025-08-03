@@ -7,10 +7,6 @@
 * openssl
   * 需要安装[openssl](https://slproweb.com/products/Win32OpenSSL.html)以及[perl](https://strawberryperl.com/)
 
-
-
-
-
 ### 一些命令
 
 * 更新本地Rust版本 rustup update stable

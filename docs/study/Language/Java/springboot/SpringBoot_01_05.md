@@ -17,11 +17,11 @@ public static void main(String[] args) {
 在`SpringApplication`类中的`run`方法会执行一系列操作：
 
 - **创建应用上下文（ApplicationContext)**
-
+  
   基于应用的类型（Servlet、Reactive、None），它会选择合适的上下文实现。`prepareContext`方法会调用以为新创建的上下文设置环境和一系列属性。
 
 - **加载Spring Bean**
-
+  
   `load`方法会被调用以加载和注册所有的配置类（`@Configuration`）、组件（`@Component`）、服务（`@Service`）等。这常通过`ComponentScan`机制实现。
 
 ### 2. 自动配置: `@EnableAutoConfiguration`
@@ -29,7 +29,7 @@ public static void main(String[] args) {
 `@EnableAutoConfiguration`是个核心注解，它会触发自动配置的魔法。它本质上是一个复合注解，使用了`@Import`将关键的自动配置类引入IOC容器中。
 
 - **`AutoConfigurationImportSelector`**
-
+  
   `AutoConfigurationImportSelector`类根据`spring.factories`文件，检索所有可用的自动配置类，并导入它们。
 
 ### 3. 条件注解: `@ConditionalOnXXX`
