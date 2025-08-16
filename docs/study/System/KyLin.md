@@ -31,9 +31,5 @@
   ```shell
   service lightdm restart
   ```
-  
-  
-  
-  
 
         
