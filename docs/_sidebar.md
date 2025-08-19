@@ -63,8 +63,6 @@
   
   * SystemArchitect
     
-    * [网络](study/SystemArchitect/net/README.md)
-    
     * [操作系统](study/SystemArchitect/操作系统.md)
     
     * [计算机网络](study/SystemArchitect/计算机网络.md)
