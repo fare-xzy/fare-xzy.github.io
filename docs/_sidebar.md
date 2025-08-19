@@ -67,7 +67,11 @@
     
     * [操作系统](study/SystemArchitect/操作系统.md)
     
+    * [计算机网络](study/SystemArchitect/计算机网络.md)
+
     * [计算机系统基础](study/SystemArchitect/计算机系统基础.md)
+
+    * [论文写作](study/SystemArchitect/论文写作.md)
     
     * [软件架构设计](study/SystemArchitect/软件架构设计.md)
   
