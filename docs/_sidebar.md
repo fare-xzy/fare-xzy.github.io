@@ -3,6 +3,7 @@
 * Error
   
   * [NetworkError.md](error%2FNetworkError.md)
+  * [GitPushFailed.md](error%2FGitPushFailed.md)
 
 * Study
   

@@ -47,4 +47,11 @@ docker run -d --restart=always --name 设置容器名 使用的镜像
 docker save imagename  -o  /home/路径/镜像名.tar
 # 还原镜像
 docker load --input 镜像名.tar
+# 进入镜像
+docker exec -it [container id] /bin/bash
+# 容器外复制文件到容器内
+docker cp 宿主机文件路径 容器id:容器内路径
+# 容器内复制文件到容器外
+docker cp 容器id:容器内路径 宿主机文件路径
+
 ```
