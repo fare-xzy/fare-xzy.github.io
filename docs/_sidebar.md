@@ -1,85 +1,128 @@
-* 
-
 * Error
-  
-  * [NetworkError.md](error%2FNetworkError.md)
-  * [GitPushFailed.md](error%2FGitPushFailed.md)
+  * [NetworkError](error/NetworkError.md)
+  * [GitPushFailed](error/GitPushFailed.md)
 
 * Study
-  
+  * AI
+    * [提示词-6A架构师](/study/AI/提示词/6A架构师.md)
   * Algorithm
-  
+    * [算法笔记](/study/Algorithm/README.md)
+    * [algorthm](/study/Algorithm/algorthm.md)
   * Audition
-  
+    * [README](/study/Audition/README.md)
+    * [面试题](/study/Audition/Question.md)
   * BuildTools
-  
+    * [Maven](/study/BuildTools/Maven/Maven.md)
+    * [Gradle](/study/BuildTools/Gradle/README.md)
   * Container
-  
+    * [概览](/study/Container/README.md)
+    * [Docker](/study/Container/Docker/README.md)
   * DataBase
-    
+    * [总览](/study/DataBase/README.md)
     * SQL
-      
-      * [MySql](/study/DataBase/SQL/MySQL/README.md)
-      
+      * [MySQL](/study/DataBase/SQL/MySQL/README.md)
+      * [MySQL配置说明](/study/DataBase/SQL/MySQL/配置说明.md)
+      * [Oracle](/study/DataBase/SQL/Oracle/README.md)
       * [PgSQL](/study/DataBase/SQL/PgSQL/README.md)
-  
+    * NoSQL
+      * [Redis](/study/DataBase/NoSQL/redis/Redis.md)
+      * [MongoDB](/study/DataBase/NoSQL/MongoDB/README.md)
+      * [TiDB](/study/DataBase/NoSQL/TIDB/README.md)
   * DesignPatterns
-  
+    * [README](/study/DesignPatterns/README.md)
+    * [Singleton](/study/DesignPatterns/code/Singleton.md)
   * DigitalSecurity
-  
+    * [README](/study/DigitalSecurity/README.md)
   * Git
-  
+    * [README](/study/Git/README.md)
   * IDEA
-  
+    * [README](/study/IDEA/README.md)
+    * [Help](/study/IDEA/Help.md)
+    * [优秀插件](/study/IDEA/优秀插件.md)
+    * [plugin](/study/IDEA/plugin.md)
+    * [Plugin Devkit](/study/IDEA/plugin/Plugin%20Devkit.md)
   * Language
-    
+    * [README](/study/Language/README.md)
     * Java
-    
-    * [Rust](/study/Language/Rust/Rust.md)
-      
-      * [rust基础](/study/Language/Rust/README.md)
-  
+      * [SpringSecurity OAuth2 小计](/study/Language/Java/SpringSecurity/oauth2/小计.md)
+    * Go
+      * [README](/study/Language/Go/README.md)
+      * [Web](/study/Language/Go/Web/Web.md)
+    * Python
+      * [README](/study/Language/Python/README.md)
+      * Basic
+        * [README](/study/Language/Python/Basic/README.md)
+        * [Basic](/study/Language/Python/Basic/Basic.md)
+        * [container](/study/Language/Python/Basic/container.md)
+        * [元类](/study/Language/Python/Basic/元类.md)
+        * [关键字与循环](/study/Language/Python/Basic/关键字与循环.md)
+        * [函数式编程与文件访问](/study/Language/Python/Basic/函数式编程与文件访问.md)
+        * [包和模块](/study/Language/Python/Basic/包和模块.md)
+        * [并发](/study/Language/Python/Basic/并发.md)
+        * [异常和测试](/study/Language/Python/Basic/异常和测试.md)
+        * [枚举](/study/Language/Python/Basic/枚举.md)
+        * [特殊方法与类的定制](/study/Language/Python/Basic/特殊方法与类的定制.md)
+        * [面向对象](/study/Language/Python/Basic/面向对象.md)
+        * [高级面向对象编程](/study/Language/Python/Basic/高级面向对象编程.md)
+    * Rust
+      * [README](/study/Language/Rust/README.md)
+      * [Rust](/study/Language/Rust/Rust.md)
   * Linux
-    
-    * [操作系统内核参数](/study/Linux/sysctl.md)
-  
+    * [README](/study/Linux/README.md)
+    * [great](/study/Linux/great.md)
+    * [sysctl](/study/Linux/sysctl.md)
   * Middleware
-  
+    * [README](/study/Middleware/README.md)
+    * DataBase
+      * [README](/study/Middleware/DataBase/README.md)
+      * NoSQL
+        * [MongoDB](/study/Middleware/DataBase/NoSQL/MongoDB/README.md)
+        * [TiDB](/study/Middleware/DataBase/NoSQL/TIDB/README.md)
+        * [Redis](/study/Middleware/DataBase/NoSQL/redis/Redis.md)
+      * SQL
+        * [MySQL](/study/Middleware/DataBase/SQL/MySQL/README.md)
+        * [PgSQL](/study/Middleware/DataBase/SQL/PgSQL/README.md)
+    * MQ
+      * [Kafka](/study/Middleware/MQ/Kafka/Kafka.md)
+    * Server
+      * [README](/study/Middleware/Server/README.md)
+      * JBoss
+        * [README](/study/Middleware/Server/JBoss/README.md)
   * New
-    
-    * [新知识库](/study/New/README.md)
-  
+    * [README](/study/New/README.md)
   * Other
-    
-    * [Assembly](study/Other/Assembly.md)
-    * [slowhttptest](study/Other/slowhttptest.md)
-  
+    * [Assembly](/study/Other/Assembly.md)
+    * [Docker](/study/Other/Docker.md)
+    * [Image](/study/Other/Image.md)
+    * [RAID](/study/Other/RAID.md)
+    * [slowhttptest](/study/Other/slowhttptest.md)
   * Regular
-  
+    * [README](/study/Regular/README.md)
   * Standard
-    
-    * [Standard](study/Standard/ANS1.md)
-  
+    * [ANS1](/study/Standard/ANS1.md)
   * System
-  
+    * [KyLin](/study/System/KyLin.md)
   * SystemArchitect
-    
-    * [操作系统](study/SystemArchitect/操作系统.md)
-    
-    * [计算机网络](study/SystemArchitect/计算机网络.md)
-
-    * [计算机系统基础](study/SystemArchitect/计算机系统基础.md)
-
-    * [论文写作](study/SystemArchitect/论文写作.md)
-    
-    * [软件架构设计](study/SystemArchitect/软件架构设计.md)
-  
-  * [Web](study/Web/README.md)
-    
-    * [Vue](study/Web/Vue.md)
-    * [VueRouter](study/Web/VueRouter.md)
-    * [Vuex](study/Web/Vuex.md)
-  
+    * [README](/study/SystemArchitect/README.md)
+    * [嵌入式](/study/SystemArchitect/嵌入式.md)
+    * [操作系统](/study/SystemArchitect/操作系统.md)
+    * [数据库概述](/study/SystemArchitect/数据库概述.md)
+    * [知识产权与标准化](/study/SystemArchitect/知识产权与标准化.md)
+    * [系统工程于信息系统基础](/study/SystemArchitect/系统工程于信息系统基础.md)
+    * [计算机系统基础](/study/SystemArchitect/计算机系统基础.md)
+    * [计算机网络](/study/SystemArchitect/计算机网络.md)
+    * [论文写作](/study/SystemArchitect/论文写作.md)
+    * [软件架构设计](/study/SystemArchitect/软件架构设计.md)
+  * Web
+    * [README](/study/Web/README.md)
+    * [HTML](/study/Web/HTML.md)
+    * [TypeScript](/study/Web/TypeScript.md)
+    * [Vue](/study/Web/Vue.md)
+    * [VueRouter](/study/Web/VueRouter.md)
+    * [Vuex](/study/Web/Vuex.md)
+    * [Vite](/study/Web/Vite.md)
+    * [Pinia](/study/Web/Pinia.md)
+    * thymeleaf
+      * [README](/study/Web/thymeleaf/README.md)
   * Windows
-    
-    * [Windows](study/Windows/README.md)
+    * [README](/study/Windows/README.md)
