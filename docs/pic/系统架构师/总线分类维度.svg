@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1260" height="720">
+<style>
+.title { font: 700 20px "Segoe UI", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #1f2d3d }
+.text { font: 400 16px "Segoe UI", system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; fill: #273849 }
+.cell { fill: #ffffff; stroke: #dcdfe6; stroke-width: 1 }
+.header { fill: #f5f7fa; stroke: #cfd8e3; }
+</style>
+<rect x="0" y="0" width="1260" height="720" fill="#fff"/>
+<text x="20" y="34" class="title">总线分类维度速记表</text>
+
+<g transform="translate(20,60)">
+  <rect class="header" x="0" y="0" width="1220" height="50"/>
+  <rect class="header" x="0" y="0" width="130" height="50"/>
+  <rect class="header" x="130" y="0" width="170" height="50"/>
+  <rect class="header" x="300" y="0" width="420" height="50"/>
+  <rect class="header" x="720" y="0" width="280" height="50"/>
+  <rect class="header" x="1000" y="0" width="220" height="50"/>
+  <text class="text" x="12" y="28" dominant-baseline="middle">分类维度</text>
+  <text class="text" x="142" y="28" dominant-baseline="middle">子类</text>
+  <text class="text" x="312" y="28" dominant-baseline="middle">定义/特征</text>
+  <text class="text" x="732" y="28" dominant-baseline="middle">典型实例</text>
+  <text class="text" x="1012" y="28" dominant-baseline="middle">考试关键词</text>
+
+  <g transform="translate(0,50)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="12" y="27" dominant-baseline="middle">① 功能</text>
+    <text class="text" x="142" y="27" dominant-baseline="middle">数据总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">双向传输指令/数据，宽度=位宽</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">PCIe ×16、DDR4-64</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“位宽”决定带宽</text>
+  </g>
+
+  <g transform="translate(0,104)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="142" y="27" dominant-baseline="middle">地址总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">单向（CPU→外设），宽度决定寻址空间</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">32 位→4 GB，48 位→256 TB</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“地址线数量”</text>
+  </g>
+
+  <g transform="translate(0,158)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="142" y="27" dominant-baseline="middle">控制总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">传输命令/时序，每根线独立含义</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">RD#、WR#、LOCK#</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“读写信号”</text>
+  </g>
+
+  <g transform="translate(0,212)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="12" y="27" dominant-baseline="middle">② 位置</text>
+    <text class="text" x="142" y="27" dominant-baseline="middle">片内总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">CPU 芯片内部，连接 Core ↔ Cache ↔ 内存控制器</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">AMBA AXI、Intel Ring</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">SoC 面试高频</text>
+  </g>
+
+  <g transform="translate(0,266)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="142" y="27" dominant-baseline="middle">系统总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">主板级，连接 CPU ↔ 主存 ↔ I/O 桥</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">前端总线 FSB、QPI、HyperTransport</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“南北桥”时代</text>
+  </g>
+
+  <g transform="translate(0,320)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="142" y="27" dominant-baseline="middle">外设总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">扩展槽或电缆，连接外设</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">USB、SATA、PCIe、CAN</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“热插拔”</text>
+  </g>
+
+  <g transform="translate(0,374)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="12" y="27" dominant-baseline="middle">③ 层次</text>
+    <text class="text" x="142" y="27" dominant-baseline="middle">CPU-存储总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">短距离、高带宽、低延迟</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">DDR5、HBM2</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“并行、同步”</text>
+  </g>
+
+  <g transform="translate(0,428)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="142" y="27" dominant-baseline="middle">I/O 总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">长距离、可扩展、协议复杂</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">PCIe 5.0、USB4</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“串行、差分”</text>
+  </g>
+
+  <g transform="translate(0,482)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="12" y="27" dominant-baseline="middle">④ 数据格式</text>
+    <text class="text" x="142" y="27" dominant-baseline="middle">并行总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">一次传多位，线间同步难，频率受限</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">PCI-32、IDE</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“133 MB/s 天花板”</text>
+  </g>
+
+  <g transform="translate(0,536)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="142" y="27" dominant-baseline="middle">串行总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">一位一位传，嵌入式时钟，高频率</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">PCIe、USB、SATA、SerDes</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“8b/10b、128b/130b”</text>
+  </g>
+
+  <g transform="translate(0,590)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="12" y="27" dominant-baseline="middle">⑤ 时序</text>
+    <text class="text" x="142" y="27" dominant-baseline="middle">同步总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">公共时钟，协议简单，速比固定</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">FSB、SPI</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“时钟沿采样”</text>
+  </g>
+
+  <g transform="translate(0,644)">
+    <rect class="cell" x="0" y="0" width="130" height="54"/>
+    <rect class="cell" x="130" y="0" width="170" height="54"/>
+    <rect class="cell" x="300" y="0" width="420" height="54"/>
+    <rect class="cell" x="720" y="0" width="280" height="54"/>
+    <rect class="cell" x="1000" y="0" width="220" height="54"/>
+    <text class="text" x="142" y="27" dominant-baseline="middle">异步总线</text>
+    <text class="text" x="312" y="27" dominant-baseline="middle">握手协议，无时钟，延迟自适应</text>
+    <text class="text" x="732" y="27" dominant-baseline="middle">USB、CAN、AMBA AXI-4 Stream</text>
+    <text class="text" x="1012" y="27" dominant-baseline="middle">“Ready/Valid”</text>
+  </g>
+</g>
+</svg>
