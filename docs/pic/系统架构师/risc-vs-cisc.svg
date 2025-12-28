@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <!-- Background -->
+  <rect width="800" height="550" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#333">RISC vs CISC 指令集对比</text>
+  
+  <!-- RISC Panel -->
+  <g transform="translate(50, 80)">
+    <rect width="330" height="430" fill="#e3f2fd" rx="8" ry="8" stroke="#2196f3" stroke-width="2"/>
+    <text x="165" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#1565c0">RISC (精简指令集)</text>
+    
+    <!-- Metaphor Icon: Uniform Bricks -->
+    <g transform="translate(115, 60)">
+      <rect x="0" y="0" width="30" height="30" fill="#42a5f5" stroke="#fff"/>
+      <rect x="35" y="0" width="30" height="30" fill="#42a5f5" stroke="#fff"/>
+      <rect x="70" y="0" width="30" height="30" fill="#42a5f5" stroke="#fff"/>
+      <rect x="0" y="35" width="30" height="30" fill="#42a5f5" stroke="#fff"/>
+      <rect x="35" y="35" width="30" height="30" fill="#42a5f5" stroke="#fff"/>
+      <rect x="70" y="35" width="30" height="30" fill="#42a5f5" stroke="#fff"/>
+    </g>
+    <text x="165" y="145" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555" font-style="italic">"积木组合"：指令简单，定长</text>
+    
+    <!-- Characteristics -->
+    <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+      <text x="20" y="180">• 指令系统：<tspan font-weight="bold">简单、精简</tspan></text>
+      <text x="20" y="210">• 指令长度：<tspan font-weight="bold">固定长度</tspan></text>
+      <text x="20" y="240">• 寻址方式：<tspan font-weight="bold">少 (Load/Store)</tspan></text>
+      <text x="20" y="270">• 实现方式：<tspan font-weight="bold">硬布线逻辑</tspan> (快)</text>
+      <text x="20" y="300">• 执行时间：<tspan font-weight="bold">单周期</tspan> (流水线)</text>
+      <text x="20" y="330">• 复杂度位置：<tspan font-weight="bold">编译器</tspan> (软件)</text>
+      <text x="20" y="360">• 寄存器数量：<tspan font-weight="bold">多</tspan></text>
+      <text x="20" y="390">• 典型代表：ARM, MIPS, RISC-V</text>
+    </g>
+  </g>
+  
+  <!-- CISC Panel -->
+  <g transform="translate(420, 80)">
+    <rect width="330" height="430" fill="#fff3e0" rx="8" ry="8" stroke="#ff9800" stroke-width="2"/>
+    <text x="165" y="40" font-family="Arial, sans-serif" font-size="22" font-weight="bold" text-anchor="middle" fill="#e65100">CISC (复杂指令集)</text>
+    
+    <!-- Metaphor Icon: Swiss Army Knife (Simplified) -->
+    <g transform="translate(130, 60)">
+       <path d="M10,10 Q50,5 90,10 Q95,30 90,50 Q50,55 10,50 Q5,30 10,10 Z" fill="#ff7043"/>
+       <line x1="20" y1="10" x2="20" y2="25" stroke="#fff" stroke-width="2"/>
+       <line x1="30" y1="10" x2="30" y2="30" stroke="#fff" stroke-width="2"/>
+       <circle cx="80" cy="30" r="5" fill="#fff"/>
+    </g>
+    <text x="165" y="145" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555" font-style="italic">"瑞士军刀"：指令丰富，变长</text>
+    
+    <!-- Characteristics -->
+    <g font-family="Arial, sans-serif" font-size="14" fill="#333">
+      <text x="20" y="180">• 指令系统：<tspan font-weight="bold">复杂、庞大</tspan></text>
+      <text x="20" y="210">• 指令长度：<tspan font-weight="bold">可变长度</tspan></text>
+      <text x="20" y="240">• 寻址方式：<tspan font-weight="bold">多且复杂</tspan> (直接访存)</text>
+      <text x="20" y="270">• 实现方式：<tspan font-weight="bold">微程序控制</tspan></text>
+      <text x="20" y="300">• 执行时间：<tspan font-weight="bold">多周期</tspan> (微码)</text>
+      <text x="20" y="330">• 复杂度位置：<tspan font-weight="bold">硬件</tspan> (微控制器)</text>
+      <text x="20" y="360">• 寄存器数量：<tspan font-weight="bold">少</tspan></text>
+      <text x="20" y="390">• 典型代表：x86 (Intel/AMD)</text>
+    </g>
+  </g>
+  
+  <!-- Comparison Arrow -->
+  <g transform="translate(390, 275)">
+     <text x="10" y="0" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#777" text-anchor="middle">VS</text>
+  </g>
+
+</svg>
