@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <!-- Background -->
+  <rect width="800" height="550" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#333">IPv4 向 IPv6 过渡的三大技术</text>
+  
+  <!-- 1. Dual Stack (双协议栈) -->
+  <g transform="translate(50, 80)">
+    <rect width="220" height="350" fill="#e3f2fd" rx="8" ry="8" stroke="#2196f3" stroke-width="2"/>
+    <text x="110" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1565c0">1. 双协议栈</text>
+    <text x="110" y="60" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">(Dual Stack)</text>
+    
+    <!-- Computer Icon -->
+    <rect x="60" y="100" width="100" height="80" rx="5" ry="5" fill="#fff" stroke="#333" stroke-width="2"/>
+    
+    <!-- Stacks -->
+    <rect x="70" y="110" width="80" height="25" fill="#4caf50" rx="3" ry="3"/>
+    <text x="110" y="127" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#fff" font-weight="bold">IPv6</text>
+    
+    <rect x="70" y="145" width="80" height="25" fill="#ff9800" rx="3" ry="3"/>
+    <text x="110" y="162" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#fff" font-weight="bold">IPv4</text>
+    
+    <!-- Arrows -->
+    <path d="M70,122 L20,122" stroke="#4caf50" stroke-width="3" marker-end="url(#arrow_green)"/>
+    <text x="45" y="115" font-family="Arial, sans-serif" font-size="12" fill="#4caf50" text-anchor="middle">v6网</text>
+    
+    <path d="M150,157 L200,157" stroke="#ff9800" stroke-width="3" marker-end="url(#arrow_orange)"/>
+    <text x="175" y="150" font-family="Arial, sans-serif" font-size="12" fill="#ff9800" text-anchor="middle">v4网</text>
+    
+    <text x="110" y="220" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">"身兼数职"</text>
+    <text x="110" y="250" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555" width="180">
+      <tspan x="110" dy="0">同时支持 IPv4 和 IPv6</tspan>
+      <tspan x="110" dy="20">根据目标自动选择</tspan>
+      <tspan x="110" dy="20">成本高，最彻底</tspan>
+    </text>
+  </g>
+  
+  <!-- 2. Tunneling (隧道技术) -->
+  <g transform="translate(290, 80)">
+    <rect width="220" height="350" fill="#fff3e0" rx="8" ry="8" stroke="#ff9800" stroke-width="2"/>
+    <text x="110" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#e65100">2. 隧道技术</text>
+    <text x="110" y="60" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">(Tunneling)</text>
+    
+    <!-- Tunnel Visualization -->
+    <rect x="20" y="120" width="180" height="40" fill="#e0e0e0" stroke="#999" stroke-width="1" rx="20" ry="20"/>
+    <text x="110" y="110" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#777">IPv4 网络海洋</text>
+    
+    <!-- Packet inside Packet -->
+    <g transform="translate(70, 125)">
+       <!-- Outer IPv4 Header -->
+       <rect x="0" y="0" width="80" height="30" fill="#ffcc80" stroke="#e65100"/>
+       <text x="40" y="20" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e65100">IPv4头</text>
+       
+       <!-- Inner IPv6 Packet -->
+       <rect x="20" y="5" width="50" height="20" fill="#a5d6a7" stroke="#2e7d32"/>
+       <text x="45" y="19" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#1b5e20">IPv6</text>
+    </g>
+    
+    <text x="110" y="220" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">"搭便车"</text>
+    <text x="110" y="250" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">
+      <tspan x="110" dy="0">IPv6 封装在 IPv4 包中</tspan>
+      <tspan x="110" dy="20">穿越 IPv4 网络</tspan>
+      <tspan x="110" dy="20">如: 6to4, ISATAP</tspan>
+    </text>
+  </g>
+  
+  <!-- 3. Translation (地址转换) -->
+  <g transform="translate(530, 80)">
+    <rect width="220" height="350" fill="#f3e5f5" rx="8" ry="8" stroke="#9c27b0" stroke-width="2"/>
+    <text x="110" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#7b1fa2">3. 地址转换</text>
+    <text x="110" y="60" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#555">(NAT-PT / NAT64)</text>
+    
+    <!-- Gateway Icon -->
+    <rect x="80" y="100" width="60" height="60" transform="rotate(45 110 130)" fill="#e1bee7" stroke="#8e24aa" stroke-width="2"/>
+    <text x="110" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#4a148c" font-weight="bold">翻译官</text>
+    
+    <!-- Packets -->
+    <rect x="20" y="115" width="40" height="30" fill="#a5d6a7" stroke="#2e7d32"/>
+    <text x="40" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#1b5e20">v6</text>
+    
+    <path d="M65,130 L80,130" stroke="#333" stroke-width="2" marker-end="url(#arrow_black)"/>
+    
+    <rect x="160" y="115" width="40" height="30" fill="#ffcc80" stroke="#e65100"/>
+    <text x="180" y="135" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e65100">v4</text>
+    
+    <path d="M140,130 L155,130" stroke="#333" stroke-width="2" marker-end="url(#arrow_black)"/>
+
+    <text x="110" y="220" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">"即时翻译"</text>
+    <text x="110" y="250" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">
+      <tspan x="110" dy="0">网关转换协议头</tspan>
+      <tspan x="110" dy="20">IPv6 与 IPv4 互通</tspan>
+      <tspan x="110" dy="20">增加延迟，破坏端到端</tspan>
+    </text>
+  </g>
+  
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow_green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4caf50" />
+    </marker>
+    <marker id="arrow_orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ff9800" />
+    </marker>
+    <marker id="arrow_black" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+
+</svg>

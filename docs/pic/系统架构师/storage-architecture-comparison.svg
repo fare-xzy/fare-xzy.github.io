@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <!-- Background -->
+  <rect width="800" height="550" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#333">三大存储架构对比：DAS vs NAS vs SAN</text>
+  
+  <!-- 1. DAS (Direct Attached Storage) -->
+  <g transform="translate(50, 80)">
+    <rect width="200" height="350" fill="#e3f2fd" rx="8" ry="8" stroke="#2196f3" stroke-width="2"/>
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1565c0">1. DAS</text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">直连式存储</text>
+    
+    <!-- Server -->
+    <rect x="50" y="100" width="100" height="60" rx="3" ry="3" fill="#90caf9" stroke="#0d47a1"/>
+    <text x="100" y="135" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#0d47a1">应用服务器</text>
+    
+    <!-- Connection -->
+    <line x1="100" y1="160" x2="100" y2="220" stroke="#333" stroke-width="4"/>
+    <text x="110" y="195" font-family="Arial, sans-serif" font-size="10" fill="#333">SCSI/SAS线缆</text>
+    
+    <!-- Storage -->
+    <g transform="translate(50, 220)">
+        <rect width="100" height="80" rx="3" ry="3" fill="#bdbdbd" stroke="#616161"/>
+        <line x1="10" y1="20" x2="90" y2="20" stroke="#616161"/>
+        <line x1="10" y1="40" x2="90" y2="40" stroke="#616161"/>
+        <line x1="10" y1="60" x2="90" y2="60" stroke="#616161"/>
+        <text x="50" y="75" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">本地磁盘阵列</text>
+    </g>
+    
+    <text x="100" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" width="180">
+      <tspan x="100" dy="0">"服务器的私有硬盘"</tspan>
+      <tspan x="100" dy="20">不通过网络</tspan>
+      <tspan x="100" dy="20">独占访问，难以共享</tspan>
+    </text>
+  </g>
+  
+  <!-- 2. NAS (Network Attached Storage) -->
+  <g transform="translate(290, 80)">
+    <rect width="200" height="350" fill="#fff3e0" rx="8" ry="8" stroke="#ff9800" stroke-width="2"/>
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#e65100">2. NAS</text>
+    <text x="100" y="60" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">网络附属存储</text>
+    
+    <!-- Server -->
+    <rect x="20" y="100" width="70" height="40" rx="3" ry="3" fill="#90caf9" stroke="#0d47a1"/>
+    <text x="55" y="125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">Server A</text>
+    
+    <rect x="110" y="100" width="70" height="40" rx="3" ry="3" fill="#90caf9" stroke="#0d47a1"/>
+    <text x="145" y="125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">Server B</text>
+    
+    <!-- Network -->
+    <ellipse cx="100" cy="180" rx="80" ry="20" fill="#e0f7fa" stroke="#00bcd4" stroke-dasharray="3,3"/>
+    <text x="100" y="185" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#006064">以太网 (LAN)</text>
+    
+    <!-- Lines -->
+    <line x1="55" y1="140" x2="80" y2="165" stroke="#00bcd4" stroke-width="2"/>
+    <line x1="145" y1="140" x2="120" y2="165" stroke="#00bcd4" stroke-width="2"/>
+    <line x1="100" y1="195" x2="100" y2="220" stroke="#00bcd4" stroke-width="2"/>
+
+    <!-- Storage -->
+    <g transform="translate(50, 220)">
+        <rect width="100" height="80" rx="3" ry="3" fill="#ffcc80" stroke="#ef6c00"/>
+        <text x="50" y="30" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#e65100">NAS 设备</text>
+        <text x="50" y="50" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#e65100">(自带文件系统)</text>
+    </g>
+    
+    <text x="100" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" width="180">
+      <tspan x="100" dy="0">"网络文件共享"</tspan>
+      <tspan x="100" dy="20">占用业务带宽</tspan>
+      <tspan x="100" dy="20">文件级访问 (NFS/CIFS)</tspan>
+    </text>
+  </g>
+  
+  <!-- 3. SAN (Storage Area Network) -->
+  <g transform="translate(530, 80)">
+    <rect width="220" height="350" fill="#e8f5e9" rx="8" ry="8" stroke="#4caf50" stroke-width="2"/>
+    <text x="110" y="40" font-family="Arial, sans-serif" font-size="20" font-weight="bold" text-anchor="middle" fill="#1b5e20">3. SAN</text>
+    <text x="110" y="60" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#555">存储区域网络</text>
+    
+    <!-- Server -->
+    <rect x="30" y="100" width="70" height="40" rx="3" ry="3" fill="#90caf9" stroke="#0d47a1"/>
+    <text x="65" y="125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">Server A</text>
+    
+    <rect x="120" y="100" width="70" height="40" rx="3" ry="3" fill="#90caf9" stroke="#0d47a1"/>
+    <text x="155" y="125" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#0d47a1">Server B</text>
+    
+    <!-- Independent Network -->
+    <rect x="20" y="160" width="180" height="40" rx="5" ry="5" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2"/>
+    <text x="110" y="185" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#1b5e20">光纤通道网络 (FC SAN)</text>
+    
+    <!-- Lines -->
+    <line x1="65" y1="140" x2="65" y2="160" stroke="#2e7d32" stroke-width="2"/>
+    <line x1="155" y1="140" x2="155" y2="160" stroke="#2e7d32" stroke-width="2"/>
+    <line x1="65" y1="200" x2="65" y2="220" stroke="#2e7d32" stroke-width="2"/>
+    <line x1="155" y1="200" x2="155" y2="220" stroke="#2e7d32" stroke-width="2"/>
+
+    <!-- Storage -->
+    <g transform="translate(20, 220)">
+        <rect width="80" height="60" rx="3" ry="3" fill="#bdbdbd" stroke="#616161"/>
+        <text x="40" y="35" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">磁盘阵列 1</text>
+    </g>
+    <g transform="translate(120, 220)">
+        <rect width="80" height="60" rx="3" ry="3" fill="#bdbdbd" stroke="#616161"/>
+        <text x="40" y="35" font-family="Arial, sans-serif" font-size="10" text-anchor="middle" fill="#333">磁盘阵列 2</text>
+    </g>
+    
+    <text x="110" y="320" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333" width="200">
+      <tspan x="110" dy="0">"独立高速专用网"</tspan>
+      <tspan x="110" dy="20">业务与存储网络分离</tspan>
+      <tspan x="110" dy="20">块级访问 (Block Level)</tspan>
+    </text>
+  </g>
+  
+  <!-- Key Differences -->
+  <g transform="translate(50, 450)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">核心区别总结：</text>
+    
+    <text x="0" y="30" font-family="Arial, sans-serif" font-size="12" fill="#555">1. DAS: 像插U盘，独占，扩展性差。</text>
+    <text x="0" y="50" font-family="Arial, sans-serif" font-size="12" fill="#555">2. NAS: 像网盘，走以太网，文件共享，但抢占业务带宽。</text>
+    <text x="0" y="70" font-family="Arial, sans-serif" font-size="12" fill="#555">3. SAN: 像专线，独立网络，高速传输，不占业务宽带，贵。</text>
+  </g>
+
+</svg>

@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#f8f9fa" rx="10" ry="10"/>
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="28" font-weight="bold" text-anchor="middle" fill="#333">SDN 转发规则一致性更新：二阶段提交</text>
+  
+  <!-- Timeline Guide -->
+  <line x1="100" y1="80" x2="100" y2="550" stroke="#ddd" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="100" y="70" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#777">时间轴</text>
+  
+  <!-- Controller -->
+  <rect x="250" y="60" width="120" height="50" rx="5" ry="5" fill="#ffcc80" stroke="#ef6c00" stroke-width="2"/>
+  <text x="310" y="90" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#e65100">控制器</text>
+  
+  <!-- Switches -->
+  <g transform="translate(500, 60)">
+    <rect x="0" y="0" width="100" height="50" rx="5" ry="5" fill="#90caf9" stroke="#1565c0" stroke-width="2"/>
+    <text x="50" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#0d47a1">交换机群</text>
+  </g>
+  
+  <!-- Phase 1: Pre-commit -->
+  <g transform="translate(0, 150)">
+    <text x="80" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="end" fill="#333">阶段一：预提交</text>
+    <text x="80" y="50" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#555">(下发新规则，但未生效)</text>
+    
+    <!-- Action -->
+    <path d="M250,30 L500,30" stroke="#ef6c00" stroke-width="2" marker-end="url(#arrow_orange)"/>
+    <text x="375" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#ef6c00">1. 发送新流表 (Version N+1)</text>
+    
+    <!-- Switch State -->
+    <rect x="520" y="10" width="140" height="60" rx="3" ry="3" fill="#fff" stroke="#999" stroke-dasharray="3,3"/>
+    <text x="530" y="30" font-family="Arial, sans-serif" font-size="12" fill="#333">当前生效: Ver N</text>
+    <text x="530" y="50" font-family="Arial, sans-serif" font-size="12" fill="#ef6c00">缓存中: Ver N+1</text>
+    
+    <!-- Ack -->
+    <path d="M500,60 L250,60" stroke="#1565c0" stroke-width="2" stroke-dasharray="3,3" marker-end="url(#arrow_blue)"/>
+    <text x="375" y="80" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#1565c0">2. 确认接收 (ACK)</text>
+  </g>
+  
+  <!-- Phase 2: Commit -->
+  <g transform="translate(0, 300)">
+    <text x="80" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="end" fill="#333">阶段二：提交生效</text>
+    <text x="80" y="50" font-family="Arial, sans-serif" font-size="12" text-anchor="end" fill="#555">(全网同步切换)</text>
+    
+    <!-- Action -->
+    <path d="M250,30 L500,30" stroke="#2e7d32" stroke-width="2" marker-end="url(#arrow_green)"/>
+    <text x="375" y="25" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#2e7d32">3. 发送提交指令 (Commit)</text>
+    
+    <!-- Switch State -->
+    <rect x="520" y="10" width="140" height="60" rx="3" ry="3" fill="#e8f5e9" stroke="#2e7d32"/>
+    <text x="530" y="30" font-family="Arial, sans-serif" font-size="12" fill="#999" text-decoration="line-through">Ver N</text>
+    <text x="530" y="50" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32" font-weight="bold">生效: Ver N+1</text>
+  </g>
+  
+  <!-- Problem Illustration -->
+  <g transform="translate(50, 450)">
+    <rect width="700" height="100" rx="5" ry="5" fill="#fff3e0" stroke="#ffb74d"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e65100">为什么需要一致性更新？</text>
+    <text x="20" y="60" font-family="Arial, sans-serif" font-size="12" fill="#333">如果更新不同步，可能导致数据包在网络中“迷路”：</text>
+    
+    <!-- Loop Example -->
+    <g transform="translate(400, 10)">
+       <circle cx="0" cy="40" r="15" fill="#90caf9" stroke="#1565c0"/>
+       <text x="0" y="45" text-anchor="middle" font-size="10">S1</text>
+       
+       <circle cx="60" cy="40" r="15" fill="#90caf9" stroke="#1565c0"/>
+       <text x="60" y="45" text-anchor="middle" font-size="10">S2</text>
+       
+       <!-- Loop Arrows -->
+       <path d="M10,35 Q30,10 50,35" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrow_red)"/>
+       <path d="M50,45 Q30,70 10,45" stroke="#d32f2f" stroke-width="2" marker-end="url(#arrow_red)"/>
+       
+       <text x="85" y="45" font-family="Arial, sans-serif" font-size="12" fill="#d32f2f">环路 (Loop)</text>
+    </g>
+    
+    <!-- Blackhole Example -->
+    <g transform="translate(550, 10)">
+       <circle cx="0" cy="40" r="15" fill="#90caf9" stroke="#1565c0"/>
+       <text x="0" y="45" text-anchor="middle" font-size="10">S3</text>
+       
+       <path d="M15,40 L45,40" stroke="#d32f2f" stroke-width="2"/>
+       <line x1="45" y1="30" x2="45" y2="50" stroke="#d32f2f" stroke-width="2"/>
+       
+       <text x="60" y="45" font-family="Arial, sans-serif" font-size="12" fill="#d32f2f">黑洞 (Drop)</text>
+    </g>
+  </g>
+
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrow_orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef6c00" />
+    </marker>
+    <marker id="arrow_blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1565c0" />
+    </marker>
+    <marker id="arrow_green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2e7d32" />
+    </marker>
+    <marker id="arrow_red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#d32f2f" />
+    </marker>
+  </defs>
+</svg>

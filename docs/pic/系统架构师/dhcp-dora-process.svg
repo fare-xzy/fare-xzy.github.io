@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold">DHCP 工作原理：DORA 四步交互</text>
+
+  <!-- Entities -->
+  <!-- Client -->
+  <g transform="translate(150, 80)">
+    <rect x="-60" y="0" width="120" height="60" rx="10" fill="#E3F2FD" stroke="#2196F3" stroke-width="2"/>
+    <text x="0" y="35" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">DHCP 客户端</text>
+    <line x1="0" y1="60" x2="0" y2="550" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Server -->
+  <g transform="translate(650, 80)">
+    <rect x="-60" y="0" width="120" height="60" rx="10" fill="#E8F5E9" stroke="#4CAF50" stroke-width="2"/>
+    <text x="0" y="35" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">DHCP 服务器</text>
+    <line x1="0" y1="60" x2="0" y2="550" stroke="#999" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Step 1: Discover -->
+  <g transform="translate(0, 150)">
+    <line x1="150" y1="0" x2="640" y2="0" stroke="#2196F3" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <rect x="280" y="-30" width="240" height="26" rx="4" fill="#fff" stroke="#ddd"/>
+    <text x="400" y="-12" font-family="Arial" font-size="14" text-anchor="middle" fill="#2196F3">1. DHCP Discover (发现)</text>
+    <text x="400" y="20" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">广播 (Broadcast): 有没有 DHCP 服务器？</text>
+  </g>
+
+  <!-- Step 2: Offer -->
+  <g transform="translate(0, 250)">
+    <line x1="650" y1="0" x2="160" y2="0" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <rect x="280" y="-30" width="240" height="26" rx="4" fill="#fff" stroke="#ddd"/>
+    <text x="400" y="-12" font-family="Arial" font-size="14" text-anchor="middle" fill="#4CAF50">2. DHCP Offer (提供)</text>
+    <text x="400" y="20" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">通常广播/单播: 我可以给你 IP 192.168.1.10</text>
+  </g>
+
+  <!-- Step 3: Request -->
+  <g transform="translate(0, 350)">
+    <line x1="150" y1="0" x2="640" y2="0" stroke="#2196F3" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <rect x="280" y="-30" width="240" height="26" rx="4" fill="#fff" stroke="#ddd"/>
+    <text x="400" y="-12" font-family="Arial" font-size="14" text-anchor="middle" fill="#2196F3">3. DHCP Request (请求)</text>
+    <text x="400" y="20" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">广播 (Broadcast): 我决定用你给的这个 IP！</text>
+    <text x="400" y="38" font-family="Arial" font-size="11" text-anchor="middle" fill="#999">(告诉其他服务器：我选了别人，你们回收 IP 吧)</text>
+  </g>
+
+  <!-- Step 4: Ack -->
+  <g transform="translate(0, 450)">
+    <line x1="650" y1="0" x2="160" y2="0" stroke="#4CAF50" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <rect x="280" y="-30" width="240" height="26" rx="4" fill="#fff" stroke="#ddd"/>
+    <text x="400" y="-12" font-family="Arial" font-size="14" text-anchor="middle" fill="#4CAF50">4. DHCP Ack (确认)</text>
+    <text x="400" y="20" font-family="Arial" font-size="12" text-anchor="middle" fill="#666">通常广播/单播: 好的，IP 正式生效，租期 8 天</text>
+  </g>
+  
+  <!-- Lease Note -->
+  <g transform="translate(400, 520)">
+    <rect x="-150" y="0" width="300" height="60" rx="5" fill="#FFF3E0" stroke="#FF9800"/>
+    <text x="0" y="20" font-family="Arial" font-size="12" text-anchor="middle" font-weight="bold" fill="#F57C00">租约续期 (Renewal)</text>
+    <text x="0" y="40" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">50% 时间: 单播请求续约</text>
+    <text x="0" y="55" font-family="Arial" font-size="11" text-anchor="middle" fill="#555">87.5% 时间: 广播请求续约 (若原服务器未响应)</text>
+  </g>
+
+</svg>
