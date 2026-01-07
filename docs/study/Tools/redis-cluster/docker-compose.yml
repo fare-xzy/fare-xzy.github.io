@@ -1,0 +1,83 @@
+services:
+  redis-7300:
+    image: redis:5.0.14
+    container_name: redis-7300
+    command: ["redis-server","--port","7300","--cluster-enabled","yes","--cluster-config-file","nodes.conf","--cluster-node-timeout","5000","--appendonly","yes","--protected-mode","no","--cluster-announce-ip","${HOST_IP}","--cluster-announce-port","7300","--cluster-announce-bus-port","17300"]
+    ports:
+      - "7300:7300"
+      - "17300:17300"
+    volumes:
+      - redis-7300-data:/data
+    networks:
+      - redis-net
+    restart: unless-stopped
+  redis-7301:
+    image: redis:5.0.14
+    container_name: redis-7301
+    command: ["redis-server","--port","7301","--cluster-enabled","yes","--cluster-config-file","nodes.conf","--cluster-node-timeout","5000","--appendonly","yes","--protected-mode","no","--cluster-announce-ip","${HOST_IP}","--cluster-announce-port","7301","--cluster-announce-bus-port","17301"]
+    ports:
+      - "7301:7301"
+      - "17301:17301"
+    volumes:
+      - redis-7301-data:/data
+    networks:
+      - redis-net
+    restart: unless-stopped
+  redis-7302:
+    image: redis:5.0.14
+    container_name: redis-7302
+    command: ["redis-server","--port","7302","--cluster-enabled","yes","--cluster-config-file","nodes.conf","--cluster-node-timeout","5000","--appendonly","yes","--protected-mode","no","--cluster-announce-ip","${HOST_IP}","--cluster-announce-port","7302","--cluster-announce-bus-port","17302"]
+    ports:
+      - "7302:7302"
+      - "17302:17302"
+    volumes:
+      - redis-7302-data:/data
+    networks:
+      - redis-net
+    restart: unless-stopped
+  redis-7303:
+    image: redis:5.0.14
+    container_name: redis-7303
+    command: ["redis-server","--port","7303","--cluster-enabled","yes","--cluster-config-file","nodes.conf","--cluster-node-timeout","5000","--appendonly","yes","--protected-mode","no","--cluster-announce-ip","${HOST_IP}","--cluster-announce-port","7303","--cluster-announce-bus-port","17303"]
+    ports:
+      - "7303:7303"
+      - "17303:17303"
+    volumes:
+      - redis-7303-data:/data
+    networks:
+      - redis-net
+    restart: unless-stopped
+  redis-7304:
+    image: redis:5.0.14
+    container_name: redis-7304
+    command: ["redis-server","--port","7304","--cluster-enabled","yes","--cluster-config-file","nodes.conf","--cluster-node-timeout","5000","--appendonly","yes","--protected-mode","no","--cluster-announce-ip","${HOST_IP}","--cluster-announce-port","7304","--cluster-announce-bus-port","17304"]
+    ports:
+      - "7304:7304"
+      - "17304:17304"
+    volumes:
+      - redis-7304-data:/data
+    networks:
+      - redis-net
+    restart: unless-stopped
+  redis-7305:
+    image: redis:5.0.14
+    container_name: redis-7305
+    command: ["redis-server","--port","7305","--cluster-enabled","yes","--cluster-config-file","nodes.conf","--cluster-node-timeout","5000","--appendonly","yes","--protected-mode","no","--cluster-announce-ip","${HOST_IP}","--cluster-announce-port","7305","--cluster-announce-bus-port","17305"]
+    ports:
+      - "7305:7305"
+      - "17305:17305"
+    volumes:
+      - redis-7305-data:/data
+    networks:
+      - redis-net
+    restart: unless-stopped
+networks:
+  redis-net:
+    driver: bridge
+volumes:
+  redis-7300-data:
+  redis-7301-data:
+  redis-7302-data:
+  redis-7303-data:
+  redis-7304-data:
+  redis-7305-data:
