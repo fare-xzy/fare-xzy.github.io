@@ -13,8 +13,8 @@ Redis Cluster 本地部署说明
   * 端口未占用：7300–7305 以及 17300–17305
 
 * 目录与文件
-  * [deploy.sh](deploy.sh) 集群启动与初始化脚本
-  * [docker-compose.yml](docker-compose.yml) 六节点容器编排
+  * [filename](./deploy.sh ':include')
+  * [filename](./docker-compose.yml ':include')
 
 * 使用步骤
   * 切换目录
