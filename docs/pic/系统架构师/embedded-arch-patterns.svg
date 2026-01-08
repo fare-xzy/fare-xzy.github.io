@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Definitions for gradients and markers -->
+  <defs>
+    <linearGradient id="layerGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e6f3ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#cce6ff;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="recursiveGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff0e6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ffdab3;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#ffffff" />
+
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="24" text-anchor="middle" font-weight="bold" fill="#333">嵌入式系统典型架构模式</text>
+
+  <!-- Left Side: Hierarchical Pattern -->
+  <g transform="translate(50, 60)">
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold" fill="#005a9e">层次化模式 (Layered)</text>
+    
+    <!-- Layers -->
+    <g transform="translate(0, 50)">
+      <!-- Application Layer -->
+      <rect x="50" y="0" width="200" height="50" rx="5" ry="5" fill="url(#layerGrad)" stroke="#005a9e" stroke-width="2"/>
+      <text x="150" y="30" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333">应用层 (Application)</text>
+      
+      <!-- Arrow Down -->
+      <line x1="150" y1="50" x2="150" y2="70" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- Middleware/OS Layer -->
+      <rect x="50" y="70" width="200" height="50" rx="5" ry="5" fill="url(#layerGrad)" stroke="#005a9e" stroke-width="2"/>
+      <text x="150" y="100" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333">中间件/操作系统 (OS)</text>
+
+      <!-- Arrow Down -->
+      <line x1="150" y1="120" x2="150" y2="140" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- HAL Layer -->
+      <rect x="50" y="140" width="200" height="50" rx="5" ry="5" fill="url(#layerGrad)" stroke="#005a9e" stroke-width="2"/>
+      <text x="150" y="170" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333">硬件抽象层 (HAL)</text>
+
+      <!-- Arrow Down -->
+      <line x1="150" y1="190" x2="150" y2="210" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+
+      <!-- Hardware Layer -->
+      <rect x="50" y="210" width="200" height="50" rx="5" ry="5" fill="#e0e0e0" stroke="#666" stroke-width="2"/>
+      <text x="150" y="240" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333">硬件层 (Hardware)</text>
+    </g>
+
+    <!-- Description -->
+    <text x="150" y="350" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666">
+      <tspan x="150" dy="0">高层依赖底层，单向调用</tspan>
+      <tspan x="150" dy="20">分为“封闭型”与“开放型”</tspan>
+    </text>
+  </g>
+
+  <!-- Vertical Divider -->
+  <line x1="400" y1="70" x2="400" y2="450" stroke="#ccc" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- Right Side: Recursive Pattern -->
+  <g transform="translate(450, 60)">
+    <text x="150" y="30" font-family="Arial, sans-serif" font-size="18" text-anchor="middle" font-weight="bold" fill="#9e3a00">递归模式 (Recursive)</text>
+
+    <!-- System Box -->
+    <g transform="translate(0, 50)">
+      <rect x="10" y="0" width="280" height="260" rx="10" ry="10" fill="none" stroke="#9e3a00" stroke-width="2" stroke-dasharray="5,2"/>
+      <text x="150" y="25" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" font-weight="bold" fill="#9e3a00">复杂系统 (System)</text>
+
+      <!-- Subsystem 1 -->
+      <rect x="30" y="40" width="240" height="90" rx="5" ry="5" fill="url(#recursiveGrad)" stroke="#9e3a00" stroke-width="1"/>
+      <text x="150" y="65" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">子系统 A (Subsystem)</text>
+      <!-- Components inside Subsystem 1 -->
+         <rect x="50" y="80" width="90" height="40" rx="3" ry="3" fill="#fff" stroke="#d6783c" stroke-width="1"/>
+         <text x="95" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">组件 A1</text>
+         <rect x="160" y="80" width="90" height="40" rx="3" ry="3" fill="#fff" stroke="#d6783c" stroke-width="1"/>
+         <text x="205" y="105" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">组件 A2</text>
+
+      <!-- Subsystem 2 -->
+      <rect x="30" y="150" width="240" height="90" rx="5" ry="5" fill="url(#recursiveGrad)" stroke="#9e3a00" stroke-width="1"/>
+      <text x="150" y="175" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333">子系统 B (Subsystem)</text>
+      <!-- Components inside Subsystem 2 -->
+         <rect x="50" y="190" width="90" height="40" rx="3" ry="3" fill="#fff" stroke="#d6783c" stroke-width="1"/>
+         <text x="95" y="215" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">组件 B1</text>
+         <rect x="160" y="190" width="90" height="40" rx="3" ry="3" fill="#fff" stroke="#d6783c" stroke-width="1"/>
+         <text x="205" y="215" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333">组件 B2</text>
+    </g>
+
+    <!-- Description -->
+    <text x="150" y="350" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#666">
+      <tspan x="150" dy="0">整体包含部分，部分又是整体</tspan>
+      <tspan x="150" dy="20">解决复杂性，支持动态扩展</tspan>
+    </text>
+  </g>
+
+</svg>
