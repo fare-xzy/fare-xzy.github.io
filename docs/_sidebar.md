@@ -36,11 +36,8 @@
   * Git
     * [README](/study/Git/README.md)
   * Tools
-    * [README](/study/Tools/README.md)
     * redis-cluster
       * [README](/study/Tools/redis-cluster/README.md)
-      * [部署脚本](/study/Tools/redis-cluster/deploy.sh)
-      * [docker-compose](/study/Tools/redis-cluster/docker-compose.yml)
   * IDEA
     * [README](/study/IDEA/README.md)
     * [Help](/study/IDEA/Help.md)
