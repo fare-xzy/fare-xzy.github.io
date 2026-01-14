@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <!-- Styles -->
+  <style>
+    .node { fill: #f0f4f8; stroke: #2c3e50; stroke-width: 2; rx: 10; ry: 10; }
+    .node-highlight { fill: #e1f5fe; stroke: #0277bd; stroke-width: 2; rx: 10; ry: 10; }
+    .title-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #2c3e50; }
+    .desc-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 12px; text-anchor: middle; fill: #555; }
+    .link { stroke: #90a4ae; stroke-width: 2; fill: none; }
+  </style>
+
+  <!-- Root Node -->
+  <rect x="300" y="30" width="200" height="50" class="node-highlight"/>
+  <text x="400" y="60" class="title-text">嵌入式数据库分类</text>
+
+  <!-- Connectors -->
+  <path d="M400 80 L150 130" class="link"/>
+  <path d="M400 80 L400 130" class="link"/>
+  <path d="M400 80 L650 130" class="link"/>
+
+  <!-- Left Node: File DB -->
+  <rect x="50" y="130" width="200" height="100" class="node"/>
+  <text x="150" y="160" class="title-text">文件数据库</text>
+  <text x="150" y="185" class="desc-text">本地文件存储</text>
+  <text x="150" y="205" class="desc-text">适合: 持久化, 低频访问</text>
+  <text x="150" y="220" class="desc-text">典型: SQLite, Berkeley DB</text>
+
+  <!-- Center Node: Memory DB -->
+  <rect x="300" y="130" width="200" height="100" class="node"/>
+  <text x="400" y="160" class="title-text">内存数据库</text>
+  <text x="400" y="185" class="desc-text">RAM 存储</text>
+  <text x="400" y="205" class="desc-text">适合: 极速读写, 实时处理</text>
+  <text x="400" y="220" class="desc-text">典型: Redis, eXtremeDB</text>
+
+  <!-- Right Node: Network DB -->
+  <rect x="550" y="130" width="200" height="100" class="node"/>
+  <text x="650" y="160" class="title-text">网络数据库</text>
+  <text x="650" y="185" class="desc-text">客户端-服务器架构</text>
+  <text x="650" y="205" class="desc-text">适合: 多设备同步, 云端交互</text>
+  <text x="650" y="220" class="desc-text">典型: Couchbase Lite</text>
+
+</svg>

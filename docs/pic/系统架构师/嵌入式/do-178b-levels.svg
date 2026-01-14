@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <style>
+    .node { fill: #f0f4f8; stroke: #2c3e50; stroke-width: 2; rx: 10; ry: 10; }
+    .title { font-family: 'Microsoft YaHei', sans-serif; font-size: 18px; font-weight: bold; text-anchor: middle; fill: #2c3e50; }
+    .level-title { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #263238; }
+    .level-desc { font-family: 'Microsoft YaHei', sans-serif; font-size: 12px; text-anchor: middle; fill: #555; }
+    .link { stroke: #90a4ae; stroke-width: 2; fill: none; }
+  </style>
+
+  <text x="450" y="40" class="title">DO-178B 软件等级与失效后果</text>
+
+  <rect x="350" y="60" width="200" height="50" class="node"/>
+  <text x="450" y="90" class="level-title">DO-178B 软件等级 (A–E)</text>
+
+  <path d="M450 110 L150 170" class="link"/>
+  <path d="M450 110 L300 170" class="link"/>
+  <path d="M450 110 L450 170" class="link"/>
+  <path d="M450 110 L600 170" class="link"/>
+  <path d="M450 110 L750 170" class="link"/>
+
+  <rect x="80" y="170" width="140" height="110" class="node" style="fill:#ffebee;"/>
+  <text x="150" y="195" class="level-title">Level A</text>
+  <text x="150" y="215" class="level-desc">Catastrophic</text>
+  <text x="150" y="235" class="level-desc">灾难级失效</text>
+  <text x="150" y="255" class="level-desc">可能导致飞机毁损、多人死亡</text>
+
+  <rect x="230" y="170" width="140" height="110" class="node" style="fill:#fff8e1;"/>
+  <text x="300" y="195" class="level-title">Level B</text>
+  <text x="300" y="215" class="level-desc">Hazardous</text>
+  <text x="300" y="235" class="level-desc">危险/严重级失效</text>
+  <text x="300" y="255" class="level-desc">严重影响飞行安全</text>
+
+  <rect x="380" y="170" width="140" height="110" class="node" style="fill:#e8f5e9;"/>
+  <text x="450" y="195" class="level-title">Level C</text>
+  <text x="450" y="215" class="level-desc">Major</text>
+  <text x="450" y="235" class="level-desc">重大失效</text>
+  <text x="450" y="255" class="level-desc">明显影响任务/安全</text>
+
+  <rect x="530" y="170" width="140" height="110" class="node" style="fill:#e3f2fd;"/>
+  <text x="600" y="195" class="level-title">Level D</text>
+  <text x="600" y="215" class="level-desc">Minor</text>
+  <text x="600" y="235" class="level-desc">轻微失效</text>
+  <text x="600" y="255" class="level-desc">增加机组工作量</text>
+
+  <rect x="680" y="170" width="140" height="110" class="node" style="fill:#fafafa;"/>
+  <text x="750" y="195" class="level-title">Level E</text>
+  <text x="750" y="215" class="level-desc">No Effect</text>
+  <text x="750" y="235" class="level-desc">无安全影响</text>
+  <text x="750" y="255" class="level-desc">不受 DO-178B 约束</text>
+
+</svg>
+

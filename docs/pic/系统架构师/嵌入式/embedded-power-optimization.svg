@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420">
+  <style>
+    .node { fill: #f0f4f8; stroke: #2c3e50; stroke-width: 2; rx: 10; ry: 10; }
+    .center { fill: #e1f5fe; stroke: #0277bd; stroke-width: 2; rx: 10; ry: 10; }
+    .title { font-family: 'Microsoft YaHei', sans-serif; font-size: 18px; font-weight: bold; text-anchor: middle; fill: #2c3e50; }
+    .subtitle { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #37474f; }
+    .item { font-family: 'Microsoft YaHei', sans-serif; font-size: 12px; text-anchor: start; fill: #555; }
+    .link { stroke: #90a4ae; stroke-width: 2; fill: none; }
+  </style>
+
+  <text x="450" y="40" class="title">嵌入式系统功耗优化：软硬件协同</text>
+
+  <rect x="350" y="60" width="200" height="60" class="center"/>
+  <text x="450" y="90" class="subtitle">系统功耗设计目标</text>
+
+  <path d="M350 90 L150 150" class="link"/>
+  <path d="M550 90 L750 150" class="link"/>
+
+  <rect x="80" y="150" width="240" height="210" class="node"/>
+  <text x="200" y="175" class="subtitle">硬件侧优化</text>
+  <text x="100" y="205" class="item">• 选低功耗 MCU/SoC，降低 V 与 f</text>
+  <text x="100" y="225" class="item">• 时钟/电源域划分，电源门控</text>
+  <text x="100" y="245" class="item">• 低功耗外设与通信（BLE 等）</text>
+  <text x="100" y="265" class="item">• DC-DC 替代 LDO，优化 PCB 走线</text>
+  <text x="100" y="285" class="item">• 控制待机电流，合理上拉/下拉</text>
+
+  <rect x="580" y="150" width="240" height="210" class="node"/>
+  <text x="700" y="175" class="subtitle">软件侧优化</text>
+  <text x="600" y="205" class="item">• 深度睡眠/时钟门控，减少活跃时间</text>
+  <text x="600" y="225" class="item">• 中断驱动代替轮询，利用 DMA</text>
+  <text x="600" y="245" class="item">• 算法优化，减少指令数与存储访问</text>
+  <text x="600" y="265" class="item">• 批处理与低占空比通信策略</text>
+  <text x="600" y="285" class="item">• 关闭未用外设与时钟源</text>
+
+</svg>
+

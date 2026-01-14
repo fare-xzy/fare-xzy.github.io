@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <!-- Styles -->
+  <style>
+    .node { fill: #f0f4f8; stroke: #2c3e50; stroke-width: 2; rx: 10; ry: 10; }
+    .node-highlight { fill: #e1f5fe; stroke: #0277bd; stroke-width: 2; rx: 10; ry: 10; }
+    .title-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #2c3e50; }
+    .desc-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 12px; text-anchor: middle; fill: #555; }
+    .link { stroke: #90a4ae; stroke-width: 2; fill: none; }
+    .label-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #455a64; }
+  </style>
+
+  <!-- Root Node -->
+  <rect x="300" y="20" width="200" height="50" class="node-highlight"/>
+  <text x="400" y="50" class="title-text">嵌入式操作系统分类</text>
+
+  <!-- Connectors -->
+  <!-- Center to Left (Real-time) -->
+  <path d="M300 45 L150 100" class="link"/>
+  <!-- Center to Right (Structure) -->
+  <path d="M500 45 L650 100" class="link"/>
+  <!-- Center to Bottom-Left (Scale) -->
+  <path d="M350 70 L250 280" class="link"/>
+  <!-- Center to Bottom-Right (Source) -->
+  <path d="M450 70 L550 280" class="link"/>
+
+  <!-- Dimension 1: Real-time -->
+  <rect x="50" y="100" width="200" height="40" class="node" style="fill: #fff9c4;"/>
+  <text x="150" y="125" class="title-text">按实时性分</text>
+  
+  <rect x="50" y="160" width="90" height="60" class="node"/>
+  <text x="95" y="185" class="label-text">强实时</text>
+  <text x="95" y="205" class="desc-text">VxWorks, QNX</text>
+
+  <rect x="160" y="160" width="90" height="60" class="node"/>
+  <text x="205" y="185" class="label-text">弱实时</text>
+  <text x="205" y="205" class="desc-text">Android, WinCE</text>
+
+  <!-- Dimension 2: Structure -->
+  <rect x="550" y="100" width="200" height="40" class="node" style="fill: #e1bee7;"/>
+  <text x="650" y="125" class="title-text">按内核结构分</text>
+
+  <rect x="550" y="160" width="90" height="60" class="node"/>
+  <text x="595" y="185" class="label-text">宏内核</text>
+  <text x="595" y="205" class="desc-text">Linux, uC/OS</text>
+
+  <rect x="660" y="160" width="90" height="60" class="node"/>
+  <text x="705" y="185" class="label-text">微内核</text>
+  <text x="705" y="205" class="desc-text">QNX, HarmonyOS</text>
+
+  <!-- Dimension 3: Scale/App -->
+  <rect x="150" y="280" width="200" height="40" class="node" style="fill: #c8e6c9;"/>
+  <text x="250" y="305" class="title-text">按应用规模分</text>
+
+  <rect x="100" y="340" width="140" height="60" class="node"/>
+  <text x="170" y="365" class="label-text">微型/传感器OS</text>
+  <text x="170" y="385" class="desc-text">TinyOS, Contiki</text>
+
+  <rect x="250" y="340" width="140" height="60" class="node"/>
+  <text x="320" y="365" class="label-text">实时内核 (RTOS)</text>
+  <text x="320" y="385" class="desc-text">FreeRTOS, RT-Thread</text>
+  
+  <rect x="175" y="410" width="150" height="60" class="node"/>
+  <text x="250" y="435" class="label-text">全功能通用OS</text>
+  <text x="250" y="455" class="desc-text">Linux, Android</text>
+
+  <!-- Dimension 4: Source -->
+  <rect x="450" y="280" width="200" height="40" class="node" style="fill: #bbdefb;"/>
+  <text x="550" y="305" class="title-text">按开源程度分</text>
+
+  <rect x="450" y="340" width="90" height="60" class="node"/>
+  <text x="495" y="365" class="label-text">开源</text>
+  <text x="495" y="385" class="desc-text">Linux, Zephyr</text>
+
+  <rect x="560" y="340" width="90" height="60" class="node"/>
+  <text x="605" y="365" class="label-text">商业</text>
+  <text x="605" y="385" class="desc-text">VxWorks, Windows</text>
+
+</svg>

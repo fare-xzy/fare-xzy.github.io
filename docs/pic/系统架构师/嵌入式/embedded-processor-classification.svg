@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Styles -->
+  <style>
+    .node { fill: #f0f4f8; stroke: #2c3e50; stroke-width: 2; rx: 10; ry: 10; }
+    .node-highlight { fill: #e1f5fe; stroke: #0277bd; stroke-width: 2; rx: 10; ry: 10; }
+    .title-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #2c3e50; }
+    .desc-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 12px; text-anchor: middle; fill: #555; }
+    .link { stroke: #90a4ae; stroke-width: 2; fill: none; }
+  </style>
+
+  <!-- Root Node -->
+  <rect x="300" y="20" width="200" height="50" class="node-highlight"/>
+  <text x="400" y="50" class="title-text">嵌入式处理器分类</text>
+
+  <!-- Connectors -->
+  <!-- To Row 1 -->
+  <path d="M400 70 L200 120" class="link"/>
+  <path d="M400 70 L600 120" class="link"/>
+  
+  <!-- To Row 2 -->
+  <path d="M400 70 L200 270" class="link"/>
+  <path d="M400 70 L600 270" class="link"/>
+
+  <!-- To Row 3 -->
+  <path d="M400 70 L400 420" class="link"/>
+
+  <!-- Row 1 Nodes -->
+  <!-- MCU -->
+  <rect x="100" y="120" width="200" height="100" class="node"/>
+  <text x="200" y="150" class="title-text">嵌入式微控制器 (MCU)</text>
+  <text x="200" y="175" class="desc-text">"单片机"</text>
+  <text x="200" y="195" class="desc-text">集成度高，体积小，成本低</text>
+  <text x="200" y="210" class="desc-text">典型：8051, AVR, Cortex-M</text>
+
+  <!-- MPU -->
+  <rect x="500" y="120" width="200" height="100" class="node"/>
+  <text x="600" y="150" class="title-text">嵌入式微处理器 (MPU)</text>
+  <text x="600" y="175" class="desc-text">高性能，类通用CPU</text>
+  <text x="600" y="195" class="desc-text">需外接存储，运行复杂OS</text>
+  <text x="600" y="210" class="desc-text">典型：ARM Cortex-A, PowerPC</text>
+
+  <!-- Row 2 Nodes -->
+  <!-- DSP -->
+  <rect x="100" y="270" width="200" height="100" class="node"/>
+  <text x="200" y="300" class="title-text">嵌入式 DSP 处理器</text>
+  <text x="200" y="325" class="desc-text">专用于数字信号处理</text>
+  <text x="200" y="345" class="desc-text">哈佛结构，硬件乘法器</text>
+  <text x="200" y="360" class="desc-text">典型：TI C6000, ADI SHARC</text>
+
+  <!-- GPU -->
+  <rect x="500" y="270" width="200" height="100" class="node"/>
+  <text x="600" y="300" class="title-text">嵌入式 GPU</text>
+  <text x="600" y="325" class="desc-text">图形与并行计算单元</text>
+  <text x="600" y="345" class="desc-text">SIMD架构，高并行度，AI加速</text>
+  <text x="600" y="360" class="desc-text">典型：NVIDIA Jetson, Mali</text>
+
+  <!-- Row 3 Node -->
+  <!-- SoC -->
+  <rect x="300" y="420" width="200" height="100" class="node"/>
+  <text x="400" y="450" class="title-text">嵌入式片上系统 (SoC)</text>
+  <text x="400" y="475" class="desc-text">系统级芯片</text>
+  <text x="400" y="495" class="desc-text">软硬件协同，集成上述多核</text>
+  <text x="400" y="510" class="desc-text">典型：Snapdragon, Apple A系列</text>
+
+</svg>
