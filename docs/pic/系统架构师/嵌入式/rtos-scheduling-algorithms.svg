@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 460">
+  <style>
+    .node { fill: #f0f4f8; stroke: #2c3e50; stroke-width: 2; rx: 10; ry: 10; }
+    .center { fill: #e1f5fe; stroke: #0277bd; stroke-width: 2; rx: 10; ry: 10; }
+    .title { font-family: 'Microsoft YaHei', sans-serif; font-size: 18px; font-weight: bold; text-anchor: middle; fill: #2c3e50; }
+    .subtitle { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #37474f; }
+    .item { font-family: 'Microsoft YaHei', sans-serif; font-size: 12px; text-anchor: start; fill: #555; }
+    .link { stroke: #90a4ae; stroke-width: 2; fill: none; }
+  </style>
+
+  <text x="450" y="40" class="title">嵌入式实时操作系统调度算法概览</text>
+
+  <rect x="325" y="60" width="250" height="60" class="center"/>
+  <text x="450" y="90" class="subtitle">实时内核调度策略</text>
+
+  <path d="M350 90 L180 160" class="link"/>
+  <path d="M550 90 L720 160" class="link"/>
+
+  <rect x="80" y="160" width="230" height="230" class="node"/>
+  <text x="195" y="185" class="subtitle">通用/软实时调度</text>
+  <text x="100" y="215" class="item">• 先来先服务 (FCFS)</text>
+  <text x="100" y="235" class="item">  简单，公平，无实时保证</text>
+  <text x="100" y="265" class="item">• 时间片轮转 (Round Robin)</text>
+  <text x="100" y="285" class="item">  各任务轮流运行，适合软实时</text>
+  <text x="100" y="315" class="item">• 静态优先级抢占</text>
+  <text x="100" y="335" class="item">  高优先级任务可随时打断低优先级</text>
+
+  <rect x="590" y="160" width="230" height="230" class="node"/>
+  <text x="705" y="185" class="subtitle">硬实时经典算法</text>
+  <text x="610" y="215" class="item">• 速率单调 (RM)</text>
+  <text x="610" y="235" class="item">  周期越短，优先级越高，静态优先级</text>
+  <text x="610" y="265" class="item">• 最早截止期优先 (EDF)</text>
+  <text x="610" y="285" class="item">  剩余截止期最早者先执行，动态优先级</text>
+  <text x="610" y="315" class="item">• 最小松弛度优先 (LLF)</text>
+  <text x="610" y="335" class="item">  最小 (截止期-剩余执行时间) 先执行</text>
+
+</svg>
+
