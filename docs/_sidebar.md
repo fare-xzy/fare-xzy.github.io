@@ -109,7 +109,7 @@
     * [README](/study/SystemArchitect/README.md)
     * [嵌入式](/study/SystemArchitect/嵌入式.md)
     * [操作系统](/study/SystemArchitect/操作系统.md)
-    * [数据库概述](/study/SystemArchitect/数据库概述.md)
+    * [数据库系统](/study/SystemArchitect/数据库系统.md)
     * [知识产权与标准化](/study/SystemArchitect/知识产权与标准化.md)
     * [系统工程于信息系统基础](/study/SystemArchitect/系统工程于信息系统基础.md)
     * [计算机系统基础](/study/SystemArchitect/计算机系统基础.md)

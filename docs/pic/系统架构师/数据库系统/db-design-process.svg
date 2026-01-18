@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 220">
+  <style>
+    .node { fill: #f0f4f8; stroke: #2c3e50; stroke-width: 2; rx: 10; ry: 10; }
+    .node-highlight { fill: #e1f5fe; stroke: #0277bd; stroke-width: 2; rx: 10; ry: 10; }
+    .title-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #2c3e50; }
+    .desc-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 11px; text-anchor: middle; fill: #555; }
+    .link { stroke: #90a4ae; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+  </style>
+
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#90a4ae" />
+    </marker>
+  </defs>
+
+  <rect x="40" y="60" width="180" height="90" class="node-highlight"/>
+  <text x="130" y="90" class="title-text">需求分析</text>
+  <text x="130" y="115" class="desc-text">业务场景</text>
+  <text x="130" y="135" class="desc-text">数据对象与约束</text>
+
+  <rect x="250" y="60" width="180" height="90" class="node"/>
+  <text x="340" y="90" class="title-text">概念结构设计</text>
+  <text x="340" y="115" class="desc-text">E-R 模型</text>
+  <text x="340" y="135" class="desc-text">统一实体与联系</text>
+
+  <rect x="460" y="60" width="180" height="90" class="node"/>
+  <text x="550" y="90" class="title-text">逻辑结构设计</text>
+  <text x="550" y="115" class="desc-text">表结构与规范化</text>
+  <text x="550" y="135" class="desc-text">主键/外键与分片键</text>
+
+  <rect x="670" y="60" width="180" height="90" class="node"/>
+  <text x="760" y="90" class="title-text">物理设计</text>
+  <text x="760" y="115" class="desc-text">索引、分区</text>
+  <text x="760" y="135" class="desc-text">存储与缓存策略</text>
+
+  <path d="M220 105 L250 105" class="link"/>
+  <path d="M430 105 L460 105" class="link"/>
+  <path d="M640 105 L670 105" class="link"/>
+</svg>
+
