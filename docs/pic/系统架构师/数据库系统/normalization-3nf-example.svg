@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350">
+  <style>
+    .header { fill: #c8e6c9; stroke: #388e3c; stroke-width: 1; }
+    .text { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; text-anchor: middle; fill: #333; }
+    .title { font-family: 'Microsoft YaHei', sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #2e7d32; }
+    .arrow { stroke: #e65100; stroke-width: 2; marker-end: url(#arrowhead); }
+    .trans-line { stroke: #1565c0; stroke-width: 2; stroke-dasharray: 4; marker-end: url(#arrowhead-blue); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e65100"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565c0"/>
+    </marker>
+  </defs>
+
+  <!-- Before 3NF -->
+  <text x="180" y="30" class="title">非 3NF (存在传递依赖)</text>
+  
+  <rect x="20" y="60" width="80" height="30" class="header"/> <text x="60" y="80" class="text">学号(PK)</text>
+  <rect x="100" y="60" width="80" height="30" class="header"/> <text x="140" y="80" class="text">系名</text>
+  <rect x="180" y="60" width="80" height="30" class="header"/> <text x="220" y="80" class="text">系主任</text>
+
+  <!-- Dependency -->
+  <path d="M140 95 L140 110 L220 110 L220 95" fill="none" stroke="#1565c0" stroke-width="2" stroke-dasharray="4"/>
+  <text x="180" y="125" class="text" fill="#1565c0" font-size="12">传递依赖 (系名->系主任)</text>
+
+  <!-- Arrow -->
+  <line x1="300" y1="80" x2="340" y2="80" class="arrow"/>
+
+  <!-- After 3NF -->
+  <text x="500" y="30" class="title">符合 3NF (拆分表)</text>
+
+  <!-- Table 1 -->
+  <text x="440" y="55" class="text" font-size="12">学生表</text>
+  <rect x="380" y="60" width="80" height="30" class="header"/> <text x="420" y="80" class="text">学号(PK)</text>
+  <rect x="460" y="60" width="80" height="30" class="header"/> <text x="500" y="80" class="text">系名(FK)</text>
+
+  <!-- Table 2 -->
+  <text x="440" y="125" class="text" font-size="12">系表</text>
+  <rect x="380" y="130" width="80" height="30" class="header"/> <text x="420" y="150" class="text">系名(PK)</text>
+  <rect x="460" y="130" width="80" height="30" class="header"/> <text x="500" y="150" class="text">系主任</text>
+
+</svg>

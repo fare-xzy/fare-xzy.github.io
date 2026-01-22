@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 350">
+  <style>
+    .header { fill: #fff9c4; stroke: #fbc02d; stroke-width: 1; }
+    .cell { fill: #ffffff; stroke: #fbc02d; stroke-width: 1; }
+    .text { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; text-anchor: middle; fill: #333; }
+    .title { font-family: 'Microsoft YaHei', sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #f57f17; }
+    .arrow { stroke: #e65100; stroke-width: 2; marker-end: url(#arrowhead); }
+    .dep-line { stroke: #d32f2f; stroke-width: 2; stroke-dasharray: 4; marker-end: url(#arrowhead-red); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e65100"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d32f2f"/>
+    </marker>
+  </defs>
+
+  <!-- Before 2NF -->
+  <text x="180" y="30" class="title">非 2NF (存在部分依赖)</text>
+  
+  <!-- Table Header -->
+  <rect x="20" y="60" width="80" height="30" class="header"/> <text x="60" y="80" class="text">学号(PK)</text>
+  <rect x="100" y="60" width="80" height="30" class="header"/> <text x="140" y="80" class="text">课号(PK)</text>
+  <rect x="180" y="60" width="80" height="30" class="header"/> <text x="220" y="80" class="text">姓名</text>
+  <rect x="260" y="60" width="80" height="30" class="header"/> <text x="300" y="80" class="text">成绩</text>
+
+  <!-- Dependency -->
+  <path d="M60 95 L60 110 L220 110 L220 95" fill="none" stroke="#d32f2f" stroke-width="2" stroke-dasharray="4"/>
+  <text x="140" y="125" class="text" fill="#d32f2f" font-size="12">部分依赖</text>
+
+  <!-- Arrow -->
+  <line x1="360" y1="80" x2="400" y2="80" class="arrow"/>
+
+  <!-- After 2NF -->
+  <text x="540" y="30" class="title">符合 2NF (拆分表)</text>
+
+  <!-- Table 1 -->
+  <text x="480" y="55" class="text" font-size="12">学生表</text>
+  <rect x="420" y="60" width="80" height="30" class="header"/> <text x="460" y="80" class="text">学号(PK)</text>
+  <rect x="500" y="60" width="80" height="30" class="header"/> <text x="540" y="80" class="text">姓名</text>
+
+  <!-- Table 2 -->
+  <text x="480" y="125" class="text" font-size="12">成绩表</text>
+  <rect x="420" y="130" width="80" height="30" class="header"/> <text x="460" y="150" class="text">学号(PK)</text>
+  <rect x="500" y="130" width="80" height="30" class="header"/> <text x="540" y="150" class="text">课号(PK)</text>
+  <rect x="580" y="130" width="80" height="30" class="header"/> <text x="620" y="150" class="text">成绩</text>
+
+</svg>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400">
+  <style>
+    .circle { fill: none; stroke-width: 2; }
+    .label { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #333; }
+    .desc { font-family: 'Microsoft YaHei', sans-serif; font-size: 10px; text-anchor: middle; fill: #666; }
+  </style>
+
+  <!-- 1NF Circle -->
+  <ellipse cx="300" cy="200" rx="280" ry="180" class="circle" stroke="#90caf9" fill="#e3f2fd" />
+  <text x="300" y="40" class="label">1NF</text>
+  <text x="300" y="55" class="desc">属性原子化</text>
+
+  <!-- 2NF Circle -->
+  <ellipse cx="300" cy="230" rx="220" ry="140" class="circle" stroke="#ffcc80" fill="#fff3e0" />
+  <text x="300" y="110" class="label">2NF</text>
+  <text x="300" y="125" class="desc">消除非主属性的部分依赖</text>
+
+  <!-- 3NF Circle -->
+  <ellipse cx="300" cy="260" rx="160" ry="100" class="circle" stroke="#a5d6a7" fill="#e8f5e9" />
+  <text x="300" y="180" class="label">3NF</text>
+  <text x="300" y="195" class="desc">消除非主属性的传递依赖</text>
+
+  <!-- BCNF Circle -->
+  <ellipse cx="300" cy="290" rx="100" ry="60" class="circle" stroke="#ef9a9a" fill="#ffebee" />
+  <text x="300" y="250" class="label">BCNF</text>
+  <text x="300" y="265" class="desc">消除主属性的部分/传递依赖</text>
+  <text x="300" y="280" class="desc">(所有决定因素均为候选码)</text>
+
+  <!-- Arrow/Flow indication could be added, but concentric circles implies subset -->
+</svg>

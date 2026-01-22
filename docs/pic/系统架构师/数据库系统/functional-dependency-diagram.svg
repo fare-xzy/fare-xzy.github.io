@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <style>
+    .node { fill: #f0f4f8; stroke: #2c3e50; stroke-width: 2; rx: 5; ry: 5; }
+    .pk-node { fill: #fff3e0; stroke: #e65100; stroke-width: 3; rx: 5; ry: 5; }
+    .title-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; font-weight: bold; text-anchor: middle; fill: #2c3e50; }
+    .label-text { font-family: 'Microsoft YaHei', sans-serif; font-size: 12px; text-anchor: middle; fill: #555; }
+    .arrow { stroke: #333; stroke-width: 2; fill: none; marker-end: url(#arrowhead); }
+    .arrow-partial { stroke: #d32f2f; stroke-width: 2; stroke-dasharray: 5,5; fill: none; marker-end: url(#arrowhead-red); }
+    .arrow-transitive { stroke: #1976d2; stroke-width: 2; stroke-dasharray: 5,5; fill: none; marker-end: url(#arrowhead-blue); }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d32f2f"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1976d2"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="30" class="title-text" font-size="20">函数依赖关系有向图示例</text>
+  <text x="400" y="55" class="label-text">关系模式：(学号, 课程号, 姓名, 系名, 系主任, 成绩)</text>
+
+  <!-- Primary Key Group -->
+  <rect x="100" y="200" width="140" height="60" class="pk-node"/>
+  <text x="170" y="225" class="title-text">学号</text>
+  <text x="170" y="245" class="title-text">(Sno)</text>
+  
+  <rect x="100" y="280" width="140" height="60" class="pk-node"/>
+  <text x="170" y="305" class="title-text">课程号</text>
+  <text x="170" y="325" class="title-text">(Cno)</text>
+  
+  <!-- Group Bracket for PK -->
+  <path d="M90 200 L80 200 L80 340 L90 340" stroke="#e65100" stroke-width="2" fill="none"/>
+  <text x="60" y="275" class="title-text" transform="rotate(-90 60,275)">主键 (Key)</text>
+
+  <!-- Attributes -->
+  <rect x="400" y="100" width="120" height="50" class="node"/>
+  <text x="460" y="130" class="title-text">姓名 (Name)</text>
+
+  <rect x="400" y="200" width="120" height="50" class="node"/>
+  <text x="460" y="230" class="title-text">系名 (Dept)</text>
+
+  <rect x="650" y="200" width="120" height="50" class="node"/>
+  <text x="710" y="230" class="title-text">系主任 (Head)</text>
+
+  <rect x="400" y="350" width="120" height="50" class="node"/>
+  <text x="460" y="380" class="title-text">成绩 (Grade)</text>
+
+  <!-- Dependencies -->
+  
+  <!-- Partial Dependency (Sno -> Name, Sno -> Dept) -->
+  <path d="M240 230 L390 130" class="arrow-partial"/>
+  <text x="320" y="170" class="label-text" fill="#d32f2f">部分依赖 (2NF Violation)</text>
+  
+  <path d="M240 230 L390 225" class="arrow-partial"/>
+  
+  <!-- Transitive Dependency (Dept -> Head) -->
+  <path d="M520 225 L640 225" class="arrow-transitive"/>
+  <text x="580" y="215" class="label-text" fill="#1976d2">传递依赖</text>
+  <text x="580" y="245" class="label-text" fill="#1976d2">(3NF Violation)</text>
+
+  <!-- Full Dependency ((Sno, Cno) -> Grade) -->
+  <path d="M240 270 L390 375" class="arrow"/>
+  <text x="320" y="340" class="label-text">完全依赖</text>
+
+  <!-- Legend -->
+  <rect x="550" y="400" width="220" height="80" fill="#fff" stroke="#ccc" rx="5"/>
+  <text x="660" y="420" class="title-text">图例说明</text>
+  <path d="M570 435 L620 435" class="arrow"/> <text x="630" y="440" class="label-text" text-anchor="start">完全函数依赖</text>
+  <path d="M570 455 L620 455" class="arrow-partial"/> <text x="630" y="460" class="label-text" text-anchor="start">部分函数依赖 (违反 2NF)</text>
+  <path d="M570 475 L620 475" class="arrow-transitive"/> <text x="630" y="480" class="label-text" text-anchor="start">传递函数依赖 (违反 3NF)</text>
+
+</svg>

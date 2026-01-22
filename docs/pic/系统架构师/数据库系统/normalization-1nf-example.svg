@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <style>
+    .header { fill: #cfd8dc; stroke: #546e7a; stroke-width: 1; }
+    .cell { fill: #ffffff; stroke: #b0bec5; stroke-width: 1; }
+    .text { font-family: 'Microsoft YaHei', sans-serif; font-size: 14px; text-anchor: middle; fill: #37474f; }
+    .title { font-family: 'Microsoft YaHei', sans-serif; font-size: 16px; font-weight: bold; text-anchor: middle; fill: #263238; }
+    .arrow { stroke: #e65100; stroke-width: 2; marker-end: url(#arrowhead); }
+    .bad-cell { fill: #ffcdd2; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e65100"/>
+    </marker>
+  </defs>
+
+  <!-- Before 1NF -->
+  <text x="150" y="30" class="title">非 1NF (属性非原子)</text>
+  
+  <rect x="50" y="50" width="80" height="30" class="header"/> <text x="90" y="70" class="text">ID</text>
+  <rect x="130" y="50" width="120" height="30" class="header"/> <text x="190" y="70" class="text">电话</text>
+  
+  <rect x="50" y="80" width="80" height="40" class="cell"/> <text x="90" y="105" class="text">001</text>
+  <rect x="130" y="80" width="120" height="40" class="cell bad-cell"/> <text x="190" y="105" class="text">138..., 139...</text>
+
+  <!-- Arrow -->
+  <line x1="270" y1="100" x2="330" y2="100" class="arrow"/>
+
+  <!-- After 1NF -->
+  <text x="450" y="30" class="title">符合 1NF (原子化)</text>
+
+  <rect x="350" y="50" width="80" height="30" class="header"/> <text x="390" y="70" class="text">ID</text>
+  <rect x="430" y="50" width="120" height="30" class="header"/> <text x="490" y="70" class="text">电话</text>
+
+  <rect x="350" y="80" width="80" height="30" class="cell"/> <text x="390" y="100" class="text">001</text>
+  <rect x="430" y="80" width="120" height="30" class="cell"/> <text x="490" y="100" class="text">13800000001</text>
+
+  <rect x="350" y="110" width="80" height="30" class="cell"/> <text x="390" y="130" class="text">001</text>
+  <rect x="430" y="110" width="120" height="30" class="cell"/> <text x="490" y="130" class="text">13900000002</text>
+
+</svg>
