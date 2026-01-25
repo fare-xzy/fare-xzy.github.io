@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500">
+  <!-- Background -->
+  <rect width="600" height="500" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333">三级封锁协议与两段锁协议</text>
+  
+  <!-- Table Header -->
+  <g transform="translate(20, 60)">
+    <rect x="0" y="0" width="100" height="40" fill="#4a90e2" rx="5"/>
+    <text x="50" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">协议级别</text>
+    
+    <rect x="110" y="0" width="340" height="40" fill="#4a90e2" rx="5"/>
+    <text x="280" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">加锁规则</text>
+    
+    <rect x="460" y="0" width="100" height="40" fill="#4a90e2" rx="5"/>
+    <text x="510" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="white">解决问题</text>
+  </g>
+  
+  <!-- Row 1: Level 1 -->
+  <g transform="translate(20, 110)">
+    <!-- Level -->
+    <rect x="0" y="0" width="100" height="50" fill="#e6f2ff" stroke="#cccccc" rx="5"/>
+    <text x="50" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">一级协议</text>
+    
+    <!-- Rule -->
+    <rect x="110" y="0" width="340" height="50" fill="#ffffff" stroke="#cccccc" rx="5"/>
+    <text x="120" y="20" font-family="Arial, sans-serif" font-size="12" fill="#333">修改前加 <tspan font-weight="bold" fill="#d0021b">X锁</tspan></text>
+    <text x="120" y="40" font-family="Arial, sans-serif" font-size="12" fill="#333">事务结束释放</text>
+    
+    <!-- Solved -->
+    <rect x="460" y="0" width="100" height="50" fill="#e6f2ff" stroke="#cccccc" rx="5"/>
+    <text x="510" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">丢失修改</text>
+  </g>
+  
+  <!-- Row 2: Level 2 -->
+  <g transform="translate(20, 170)">
+    <!-- Level -->
+    <rect x="0" y="0" width="100" height="50" fill="#e6f2ff" stroke="#cccccc" rx="5"/>
+    <text x="50" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">二级协议</text>
+    
+    <!-- Rule -->
+    <rect x="110" y="0" width="340" height="50" fill="#ffffff" stroke="#cccccc" rx="5"/>
+    <text x="120" y="20" font-family="Arial, sans-serif" font-size="12" fill="#333">一级 + 读前加 <tspan font-weight="bold" fill="#417505">S锁</tspan></text>
+    <text x="120" y="40" font-family="Arial, sans-serif" font-size="12" fill="#333">读完立刻释放</text>
+    
+    <!-- Solved -->
+    <rect x="460" y="0" width="100" height="50" fill="#e6f2ff" stroke="#cccccc" rx="5"/>
+    <text x="510" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">读脏数据</text>
+  </g>
+  
+  <!-- Row 3: Level 3 -->
+  <g transform="translate(20, 230)">
+    <!-- Level -->
+    <rect x="0" y="0" width="100" height="50" fill="#e6f2ff" stroke="#cccccc" rx="5"/>
+    <text x="50" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#333">三级协议</text>
+    
+    <!-- Rule -->
+    <rect x="110" y="0" width="340" height="50" fill="#ffffff" stroke="#cccccc" rx="5"/>
+    <text x="120" y="20" font-family="Arial, sans-serif" font-size="12" fill="#333">一级 + 读前加 <tspan font-weight="bold" fill="#417505">S锁</tspan></text>
+    <text x="120" y="40" font-family="Arial, sans-serif" font-size="12" fill="#333">事务结束释放</text>
+    
+    <!-- Solved -->
+    <rect x="460" y="0" width="100" height="50" fill="#e6f2ff" stroke="#cccccc" rx="5"/>
+    <text x="510" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">不可重复读</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="20" y1="300" x2="580" y2="300" stroke="#cccccc" stroke-width="2" stroke-dasharray="5,5"/>
+
+  <!-- 2PL Section -->
+  <g transform="translate(20, 320)">
+     <!-- Title -->
+    <text x="0" y="20" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#333">两段锁协议 (2PL)</text>
+    <text x="0" y="45" font-family="Arial, sans-serif" font-size="12" fill="#555">保证并发调度的<tspan font-weight="bold" fill="#4a90e2">可串行化</tspan>，但可能导致<tspan font-weight="bold" fill="#d0021b">死锁</tspan></text>
+    
+    <!-- Definition Box -->
+    <rect x="0" y="60" width="220" height="100" fill="#f9f9f9" stroke="#ddd" rx="5"/>
+    <text x="10" y="80" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#333">两个阶段：</text>
+    <text x="10" y="100" font-family="Arial, sans-serif" font-size="12" fill="#333">1. 扩展阶段：<tspan fill="#4a90e2">只加锁，不解锁</tspan></text>
+    <text x="10" y="120" font-family="Arial, sans-serif" font-size="12" fill="#333">2. 收缩阶段：<tspan fill="#f5a623">只解锁，不加锁</tspan></text>
+    <text x="10" y="140" font-family="Arial, sans-serif" font-size="12" fill="#333">遵守 2PL 是可串行化的充分条件</text>
+
+    <!-- Graph Visualization -->
+    <g transform="translate(250, 40)">
+       <!-- Axis -->
+       <line x1="0" y1="120" x2="300" y2="120" stroke="#333" stroke-width="1.5"/>
+       <line x1="0" y1="120" x2="0" y2="20" stroke="#333" stroke-width="1.5"/>
+       <text x="280" y="135" font-family="Arial, sans-serif" font-size="10" fill="#333">时间</text>
+       <text x="-10" y="15" font-family="Arial, sans-serif" font-size="10" fill="#333">锁</text>
+       
+       <!-- Curve -->
+       <path d="M0,120 L150,30 L150,120 Z" fill="#e6f2ff" opacity="0.5"/>
+       <path d="M150,30 L300,120 L150,120 Z" fill="#fff0e6" opacity="0.5"/>
+       
+       <line x1="0" y1="120" x2="150" y2="30" stroke="#4a90e2" stroke-width="2"/>
+       <line x1="150" y1="30" x2="300" y2="120" stroke="#f5a623" stroke-width="2"/>
+       <line x1="150" y1="30" x2="150" y2="120" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+       
+       <!-- Labels -->
+       <text x="60" y="90" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#4a90e2">扩展</text>
+       <text x="220" y="90" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#f5a623">收缩</text>
+       <text x="150" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#d0021b">封锁点</text>
+    </g>
+  </g>
+  
+</svg>

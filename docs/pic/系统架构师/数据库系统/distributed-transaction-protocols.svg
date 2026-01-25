@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 550">
+  <!-- Background -->
+  <rect width="600" height="550" fill="#ffffff"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#333">分布式事务管理方案对比</text>
+  
+  <!-- 2PC Section -->
+  <g transform="translate(20, 60)">
+    <rect x="0" y="0" width="560" height="140" fill="#f9f9f9" stroke="#ddd" rx="5"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4a90e2">1. 两阶段提交 (2PC)</text>
+    <text x="540" y="30" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#999">强一致性，同步阻塞</text>
+    
+    <!-- Flow -->
+    <g transform="translate(40, 50)">
+      <!-- Phase 1 -->
+      <circle cx="30" cy="30" r="20" fill="#e6f2ff" stroke="#4a90e2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="12" fill="#4a90e2">P1</text>
+      <text x="30" y="70" text-anchor="middle" font-size="12" fill="#333">准备</text>
+      
+      <line x1="60" y1="30" x2="140" y2="30" stroke="#999" stroke-width="2" marker-end="url(#arrow)"/>
+      <text x="100" y="25" text-anchor="middle" font-size="10" fill="#666">询问是否可提交</text>
+      
+      <!-- Phase 2 -->
+      <circle cx="170" cy="30" r="20" fill="#e6f2ff" stroke="#4a90e2"/>
+      <text x="170" y="35" text-anchor="middle" font-size="12" fill="#4a90e2">P2</text>
+      <text x="170" y="70" text-anchor="middle" font-size="12" fill="#333">提交</text>
+      
+      <!-- Issues -->
+      <rect x="250" y="10" width="250" height="60" fill="#fff0e6" stroke="#f5a623" rx="3"/>
+      <text x="260" y="30" font-size="12" font-weight="bold" fill="#d0021b">缺点：</text>
+      <text x="260" y="50" font-size="11" fill="#555">• 同步阻塞：所有参与者锁定资源</text>
+      <text x="260" y="65" font-size="11" fill="#555">• 单点故障：协调者挂了，参与者无限等待</text>
+    </g>
+  </g>
+  
+  <!-- 3PC Section -->
+  <g transform="translate(20, 210)">
+    <rect x="0" y="0" width="560" height="140" fill="#f9f9f9" stroke="#ddd" rx="5"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4a90e2">2. 三阶段提交 (3PC)</text>
+    <text x="540" y="30" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#999">引入超时机制，非阻塞</text>
+    
+    <!-- Flow -->
+    <g transform="translate(40, 50)">
+      <!-- Phase 1 -->
+      <circle cx="30" cy="30" r="20" fill="#e6f2ff" stroke="#4a90e2"/>
+      <text x="30" y="35" text-anchor="middle" font-size="12" fill="#4a90e2">P1</text>
+      <text x="30" y="70" text-anchor="middle" font-size="12" fill="#333">CanCommit</text>
+      
+      <line x1="60" y1="30" x2="110" y2="30" stroke="#999" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <!-- Phase 2 -->
+      <circle cx="140" cy="30" r="20" fill="#e6f2ff" stroke="#4a90e2"/>
+      <text x="140" y="35" text-anchor="middle" font-size="12" fill="#4a90e2">P2</text>
+      <text x="140" y="70" text-anchor="middle" font-size="12" fill="#333">PreCommit</text>
+      
+      <line x1="170" y1="30" x2="220" y2="30" stroke="#999" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <!-- Phase 3 -->
+      <circle cx="250" cy="30" r="20" fill="#e6f2ff" stroke="#4a90e2"/>
+      <text x="250" y="35" text-anchor="middle" font-size="12" fill="#4a90e2">P3</text>
+      <text x="250" y="70" text-anchor="middle" font-size="12" fill="#333">DoCommit</text>
+      
+      <!-- Improvement -->
+      <rect x="300" y="10" width="200" height="60" fill="#e8f5e9" stroke="#417505" rx="3"/>
+      <text x="310" y="30" font-size="12" font-weight="bold" fill="#417505">改进：</text>
+      <text x="310" y="50" font-size="11" fill="#555">• 增加 CanCommit 询问阶段</text>
+      <text x="310" y="65" font-size="11" fill="#555">• 引入超时机制，避免无限等待</text>
+    </g>
+  </g>
+  
+  <!-- Compensation Section -->
+  <g transform="translate(20, 360)">
+    <rect x="0" y="0" width="560" height="140" fill="#f9f9f9" stroke="#ddd" rx="5"/>
+    <text x="20" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#4a90e2">3. 事务补偿机制 (TCC/Saga)</text>
+    <text x="540" y="30" text-anchor="end" font-family="Arial, sans-serif" font-size="12" fill="#999">最终一致性，柔性事务</text>
+    
+    <!-- Flow -->
+    <g transform="translate(40, 50)">
+      <!-- Operation -->
+      <rect x="0" y="15" width="80" height="30" fill="#e6f2ff" stroke="#4a90e2" rx="3"/>
+      <text x="40" y="35" text-anchor="middle" font-size="12" fill="#333">操作 A</text>
+      
+      <line x1="80" y1="30" x2="120" y2="30" stroke="#417505" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <rect x="120" y="15" width="80" height="30" fill="#e6f2ff" stroke="#4a90e2" rx="3"/>
+      <text x="160" y="35" text-anchor="middle" font-size="12" fill="#333">操作 B</text>
+      
+      <line x1="200" y1="30" x2="240" y2="30" stroke="#d0021b" stroke-width="2" marker-end="url(#arrow)"/>
+      <text x="220" y="25" text-anchor="middle" font-size="10" fill="#d0021b">失败</text>
+      
+      <!-- Compensation -->
+      <path d="M 240 30 Q 260 30 260 50 L 260 60 Q 260 80 240 80 L 200 80" fill="none" stroke="#f5a623" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <rect x="120" y="65" width="80" height="30" fill="#fff0e6" stroke="#f5a623" rx="3"/>
+      <text x="160" y="85" text-anchor="middle" font-size="12" fill="#333">撤销 B</text>
+      
+      <line x1="120" y1="80" x2="80" y2="80" stroke="#f5a623" stroke-width="2" marker-end="url(#arrow)"/>
+      
+      <rect x="0" y="65" width="80" height="30" fill="#fff0e6" stroke="#f5a623" rx="3"/>
+      <text x="40" y="85" text-anchor="middle" font-size="12" fill="#333">撤销 A</text>
+      
+      <!-- Description -->
+      <text x="310" y="50" font-size="12" fill="#555">不加锁，通过反向操作回滚</text>
+      <text x="310" y="70" font-size="12" fill="#555">适用于长事务、高并发场景</text>
+    </g>
+  </g>
+
+  <!-- Arrow Definition -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#999" />
+    </marker>
+  </defs>
+</svg>
