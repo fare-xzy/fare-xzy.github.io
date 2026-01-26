@@ -1,0 +1,42 @@
+version: '3'
+
+services:
+  redis-master:
+    image: redis:5.0.14
+    container_name: redis-ms-master
+    command: redis-server --requirepass "${REDIS_PASSWORD:-}" --masterauth "${REDIS_PASSWORD:-}" --appendonly yes --protected-mode no
+    ports:
+      - "6479:6379"
+    networks:
+      - redis-ms-net
+    restart: always
+
+  redis-slave1:
+    image: redis:5.0.14
+    container_name: redis-ms-slave1
+    # 连接到 redis-master 内部端口 6379，但对外部宣布自己的 HOST_IP 和 映射端口 6480
+    command: redis-server --slaveof redis-master 6379 --requirepass "${REDIS_PASSWORD:-}" --masterauth "${REDIS_PASSWORD:-}" --replica-announce-ip "${HOST_IP}" --replica-announce-port 6480 --appendonly yes --protected-mode no
+    ports:
+      - "6480:6379"
+    depends_on:
+      - redis-master
+    networks:
+      - redis-ms-net
+    restart: always
+
+  redis-slave2:
+    image: redis:5.0.14
+    container_name: redis-ms-slave2
+    # 连接到 redis-master 内部端口 6379，但对外部宣布自己的 HOST_IP 和 映射端口 6481
+    command: redis-server --slaveof redis-master 6379 --requirepass "${REDIS_PASSWORD:-}" --masterauth "${REDIS_PASSWORD:-}" --replica-announce-ip "${HOST_IP}" --replica-announce-port 6481 --appendonly yes --protected-mode no
+    ports:
+      - "6481:6379"
+    depends_on:
+      - redis-master
+    networks:
+      - redis-ms-net
+    restart: always
+
+networks:
+  redis-ms-net:
+    driver: bridge

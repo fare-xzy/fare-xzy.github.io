@@ -1,0 +1,82 @@
+version: '3'
+
+services:
+  redis-master:
+    image: redis:5.0.14
+    container_name: redis-master
+    command: redis-server --requirepass "${REDIS_PASSWORD:-}" --masterauth "${REDIS_PASSWORD:-}" --appendonly yes --protected-mode no
+    ports:
+      - "6379:6379"
+    networks:
+      - redis-sentinel-net
+    restart: always
+
+  redis-slave1:
+    image: redis:5.0.14
+    container_name: redis-slave1
+    command: redis-server --slaveof ${HOST_IP} 6379 --requirepass "${REDIS_PASSWORD:-}" --masterauth "${REDIS_PASSWORD:-}" --replica-announce-ip "${HOST_IP}" --replica-announce-port 6380 --appendonly yes --protected-mode no
+    ports:
+      - "6380:6379"
+    depends_on:
+      - redis-master
+    networks:
+      - redis-sentinel-net
+    restart: always
+
+  redis-slave2:
+    image: redis:5.0.14
+    container_name: redis-slave2
+    command: redis-server --slaveof ${HOST_IP} 6379 --requirepass "${REDIS_PASSWORD:-}" --masterauth "${REDIS_PASSWORD:-}" --replica-announce-ip "${HOST_IP}" --replica-announce-port 6381 --appendonly yes --protected-mode no
+    ports:
+      - "6381:6379"
+    depends_on:
+      - redis-master
+    networks:
+      - redis-sentinel-net
+    restart: always
+
+  sentinel1:
+    image: redis:5.0.14
+    container_name: redis-sentinel1
+    command: redis-sentinel /etc/redis/sentinel.conf
+    volumes:
+      - ./sentinel.conf:/etc/redis/sentinel.conf
+    ports:
+      - "26379:26379"
+    depends_on:
+      - redis-master
+    networks:
+      - redis-sentinel-net
+    restart: always
+
+  sentinel2:
+    image: redis:5.0.14
+    container_name: redis-sentinel2
+    command: redis-sentinel /etc/redis/sentinel.conf
+    volumes:
+      - ./sentinel.conf:/etc/redis/sentinel.conf
+    ports:
+      - "26380:26379"
+    depends_on:
+      - redis-master
+    networks:
+      - redis-sentinel-net
+    restart: always
+
+  sentinel3:
+    image: redis:5.0.14
+    container_name: redis-sentinel3
+    command: redis-sentinel /etc/redis/sentinel.conf
+    volumes:
+      - ./sentinel.conf:/etc/redis/sentinel.conf
+    ports:
+      - "26381:26379"
+    depends_on:
+      - redis-master
+    networks:
+      - redis-sentinel-net
+    restart: always
+
+networks:
+  redis-sentinel-net:
+    driver: bridge
