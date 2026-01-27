@@ -13,16 +13,14 @@
 
 * 目录与文件
   * deploy.sh
-
-[filename](deploy.sh ':include :type=code :lang=bash')
+[filename](/study/Tools/redis/redis-master-slave/deploy.sh ':include :type=code :lang=bash')
   * docker-compose.yml
-
-[filename](docker-compose.yml ':include :type=code :lang=yaml')
+[filename](/study/Tools/redis/redis-master-slave/docker-compose.yml ':include :type=code :lang=yaml')
 
 * 使用步骤
   * 切换目录
     ```bash
-    cd docs/study/Tools/redis-master-slave
+    cd docs/study/Tools/redis/redis-master-slave
     ```
   * 选择主机 IP（可选）
     * 脚本会自动探测本机 IP；如需指定，传入第一个参数

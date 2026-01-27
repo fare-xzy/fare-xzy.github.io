@@ -15,15 +15,15 @@ Redis Cluster 本地部署说明
 * 目录与文件
   * deploy.sh
 
-[filename](deploy.sh ':include :type=code')
+[filename](/study/Tools/redis/redis-cluster/deploy.sh ':include :type=code :lang=bash')
   * docker-compose.yml
 
-[filename](docker-compose.yml ':include :type=code')
+[filename](/study/Tools/redis/redis-cluster/docker-compose.yml ':include :type=code :lang=yaml')
 
 * 使用步骤
   * 切换目录
     ```bash
-    cd docs/study/Tools/redis-cluster
+    cd docs/study/Tools/redis/redis-cluster
     ```
   * 选择主机 IP（可选）
     * 脚本会自动探测本机 IP；如需指定，传入第一个参数或预先设置环境变量

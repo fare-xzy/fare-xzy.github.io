@@ -36,8 +36,12 @@
   * Git
     * [README](/study/Git/README.md)
   * Tools
-    * redis-cluster
-      * [README](/study/Tools/redis-cluster/README.md)
+    * Linux
+      * [install_docker_openeuler](/study/Tools/Linux/README.md)
+    * redis
+      * [redis-cluster](/study/Tools/redis/redis-cluster/README.md)
+      * [redis-master-slave](/study/Tools/redis/redis-master-slave/README.md)
+      * [redis-sentinel](/study/Tools/redis/redis-sentinel/README.md)
   * IDEA
     * [README](/study/IDEA/README.md)
     * [Help](/study/IDEA/Help.md)
