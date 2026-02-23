@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="260" viewBox="0 0 880 260">
+  <style>
+    .title { font: bold 18px sans-serif; fill: #222222; }
+    .subtitle { font: 13px sans-serif; fill: #555555; }
+    .header { fill: #bbdefb; }
+    .row-even { fill: #ffffff; }
+    .row-odd { fill: #e3f2fd; }
+    .border { fill: none; stroke: #333333; stroke-width: 1; }
+    .cell-text { font: 12px sans-serif; fill: #222222; }
+    .cell-bold { font: bold 12px sans-serif; fill: #222222; }
+    .center { text-anchor: middle; }
+  </style>
+
+  <rect x="0" y="0" width="880" height="260" fill="#ffffff" />
+
+  <text x="440" y="24" text-anchor="middle" class="title">TCP 与 UDP 对比一览</text>
+  <text x="440" y="44" text-anchor="middle" class="subtitle">重点记“连接、可靠、顺序、拥塞控制、适用场景”五个维度</text>
+
+  <g transform="translate(40,60)">
+    <rect x="0" y="0" width="170" height="30" class="header" />
+    <rect x="170" y="0" width="320" height="30" class="header" />
+    <rect x="490" y="0" width="210" height="30" class="header" />
+
+    <text x="85" y="20" class="cell-bold center">维度</text>
+    <text x="330" y="20" class="cell-bold center">TCP</text>
+    <text x="595" y="20" class="cell-bold center">UDP</text>
+
+    <rect x="0" y="30" width="700" height="30" class="row-odd" />
+    <rect x="0" y="60" width="700" height="30" class="row-even" />
+    <rect x="0" y="90" width="700" height="30" class="row-odd" />
+    <rect x="0" y="120" width="700" height="30" class="row-even" />
+    <rect x="0" y="150" width="700" height="30" class="row-odd" />
+    <rect x="0" y="180" width="700" height="30" class="row-even" />
+
+    <rect x="0" y="0" width="700" height="210" class="border" />
+    <line x1="170" y1="0" x2="170" y2="210" class="border" />
+    <line x1="490" y1="0" x2="490" y2="210" class="border" />
+    <line x1="0" y1="30" x2="700" y2="30" class="border" />
+    <line x1="0" y1="60" x2="700" y2="60" class="border" />
+    <line x1="0" y1="90" x2="700" y2="90" class="border" />
+    <line x1="0" y1="120" x2="700" y2="120" class="border" />
+    <line x1="0" y1="150" x2="700" y2="150" class="border" />
+    <line x1="0" y1="180" x2="700" y2="180" class="border" />
+
+    <text x="85" y="50" class="cell-bold center">连接方式</text>
+    <text x="180" y="48" class="cell-text">面向连接，需要三次握手建立连接</text>
+    <text x="500" y="48" class="cell-text">无连接，直接发送数据报</text>
+
+    <text x="85" y="80" class="cell-bold center">可靠性</text>
+    <text x="180" y="78" class="cell-text">可靠，序号、确认、重传确保不丢不重乱序可恢复</text>
+    <text x="500" y="78" class="cell-text">不可靠，无确认与重传，可能丢包或乱序</text>
+
+    <text x="85" y="110" class="cell-bold center">数据边界</text>
+    <text x="180" y="108" class="cell-text">面向字节流，无固定边界，由应用划分</text>
+    <text x="500" y="108" class="cell-text">面向报文，应用一次发送对应一次 UDP 报文</text>
+
+    <text x="85" y="140" class="cell-bold center">拥塞与流量控制</text>
+    <text x="180" y="138" class="cell-text">有拥塞控制和流量控制（滑动窗口、慢开始等）</text>
+    <text x="500" y="138" class="cell-text">无拥塞和流量控制，尽最大努力交付</text>
+
+    <text x="85" y="170" class="cell-bold center">开销与效率</text>
+    <text x="180" y="168" class="cell-text">头部字段多，控制机制复杂，开销较大</text>
+    <text x="500" y="168" class="cell-text">头部仅 8 字节，处理简单，实时性好</text>
+
+    <text x="85" y="200" class="cell-bold center">典型应用</text>
+    <text x="180" y="198" class="cell-text">HTTP/HTTPS、FTP、SMTP、SSH、数据库访问等</text>
+    <text x="500" y="198" class="cell-text">DNS、DHCP、VoIP、直播流媒体、在线游戏等</text>
+  </g>
+</svg>
+

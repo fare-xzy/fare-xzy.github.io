@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="260" viewBox="0 0 880 260">
+  <style>
+    .title { font: bold 18px sans-serif; fill: #222222; }
+    .subtitle { font: 13px sans-serif; fill: #555555; }
+    .axis { stroke: #333333; stroke-width: 1; }
+    .win { fill: rgba(129, 199, 132, 0.4); stroke: #388e3c; stroke-width: 1; }
+    .seg-sent { fill: #90caf9; stroke: #1976d2; stroke-width: 1; }
+    .seg-acked { fill: #c8e6c9; stroke: #388e3c; stroke-width: 1; }
+    .seg-text { font: 11px sans-serif; fill: #222222; }
+    .label { font: 12px sans-serif; fill: #222222; }
+    .small { font: 11px sans-serif; fill: #555555; }
+    .arrow { stroke: #333333; stroke-width: 1; marker-end: url(#arrowHead); }
+  </style>
+
+  <defs>
+    <marker id="arrowHead" viewBox="0 0 6 6" refX="5" refY="3"
+            markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#333333" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="880" height="260" fill="#ffffff" />
+
+  <text x="440" y="24" text-anchor="middle" class="title">TCP 滑动窗口与流量控制示意</text>
+  <text x="440" y="44" text-anchor="middle" class="subtitle">发送窗口向右滑动：已确认 | 已发送未确认 | 允许发送</text>
+
+  <g transform="translate(60,80)">
+    <line x1="0" y1="80" x2="720" y2="80" class="axis" />
+    <text x="-10" y="84" class="label" text-anchor="end">序号</text>
+
+    <rect x="0" y="60" width="120" height="40" class="seg-acked" />
+    <text x="10" y="78" class="seg-text">已确认</text>
+    <text x="10" y="92" class="seg-text">[1–10]</text>
+
+    <rect x="120" y="60" width="160" height="40" class="seg-sent" />
+    <text x="130" y="78" class="seg-text">已发送未确认</text>
+    <text x="130" y="92" class="seg-text">[11–20]</text>
+
+    <rect x="280" y="60" width="200" height="40" class="win" />
+    <text x="290" y="78" class="seg-text">发送窗口可用</text>
+    <text x="290" y="92" class="seg-text">[21–30]</text>
+
+    <text x="520" y="78" class="seg-text">尚未允许发送区域</text>
+
+    <line x1="120" y1="40" x2="280" y2="40" class="arrow" />
+    <text x="200" y="32" class="small" text-anchor="middle">ACK 到达后窗口右移</text>
+  </g>
+
+  <g transform="translate(60,170)">
+    <text x="0" y="0" class="label">要点：</text>
+    <text x="0" y="18" class="small">1. TCP 使用滑动窗口在一个 RTT 内发送多个报文段，提高吞吐量。</text>
+    <text x="0" y="34" class="small">2. 接收端通告窗口大小（rwnd），限制发送端未确认数据总量，实现流量控制。</text>
+    <text x="0" y="50" class="small">3. 实际发送窗口 = min(拥塞窗口 cwnd, 接收窗口 rwnd)。</text>
+    <text x="0" y="66" class="small">4. 当 ACK 返回时，窗口右移，已确认数据从窗口中滑出，新数据可以进入窗口发送。</text>
+  </g>
+</svg>
+

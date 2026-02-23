@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="320" viewBox="0 0 880 320">
+  <style>
+    .title { font: bold 18px sans-serif; fill: #222222; }
+    .header { fill: #bbdefb; }
+    .row-even { fill: #ffffff; }
+    .row-odd { fill: #e3f2fd; }
+    .border { fill: none; stroke: #333333; stroke-width: 1; }
+    .cell-text { font: 12px sans-serif; fill: #222222; }
+    .cell-text-bold { font: bold 12px sans-serif; fill: #222222; }
+    .cell-center { text-anchor: middle; }
+  </style>
+
+  <rect x="0" y="0" width="880" height="320" fill="#ffffff" />
+
+  <text x="440" y="22" text-anchor="middle" class="title">OSI 七层模型速记表</text>
+
+  <g transform="translate(40,40)">
+    <rect x="0" y="0" width="60" height="30" class="header" />
+    <rect x="60" y="0" width="100" height="30" class="header" />
+    <rect x="160" y="0" width="280" height="30" class="header" />
+    <rect x="440" y="0" width="300" height="30" class="header" />
+
+    <text x="30" y="20" class="cell-text-bold cell-center">层次</text>
+    <text x="110" y="20" class="cell-text-bold cell-center">名称</text>
+    <text x="300" y="20" class="cell-text-bold cell-center">主要功能</text>
+    <text x="590" y="20" class="cell-text-bold cell-center">主要设备及协议（示例）</text>
+
+    <rect x="0" y="30" width="740" height="30" class="row-odd" />
+    <rect x="0" y="60" width="740" height="30" class="row-even" />
+    <rect x="0" y="90" width="740" height="30" class="row-odd" />
+    <rect x="0" y="120" width="740" height="30" class="row-even" />
+    <rect x="0" y="150" width="740" height="30" class="row-odd" />
+    <rect x="0" y="180" width="740" height="30" class="row-even" />
+    <rect x="0" y="210" width="740" height="30" class="row-odd" />
+
+    <rect x="0" y="0" width="740" height="240" class="border" />
+    <line x1="60" y1="0" x2="60" y2="240" class="border" />
+    <line x1="160" y1="0" x2="160" y2="240" class="border" />
+    <line x1="440" y1="0" x2="440" y2="240" class="border" />
+    <line x1="0" y1="30" x2="740" y2="30" class="border" />
+    <line x1="0" y1="60" x2="740" y2="60" class="border" />
+    <line x1="0" y1="90" x2="740" y2="90" class="border" />
+    <line x1="0" y1="120" x2="740" y2="120" class="border" />
+    <line x1="0" y1="150" x2="740" y2="150" class="border" />
+    <line x1="0" y1="180" x2="740" y2="180" class="border" />
+    <line x1="0" y1="210" x2="740" y2="210" class="border" />
+
+    <text x="30" y="50" class="cell-text-bold cell-center">7</text>
+    <text x="110" y="50" class="cell-text-bold cell-center">应用层</text>
+    <text x="170" y="46" class="cell-text">实现具体的应用功能</text>
+    <text x="170" y="62" class="cell-text"></text>
+    <text x="450" y="46" class="cell-text">POP3、FTP、HTTP、Telnet、SMTP、DHCP、TFTP、SNMP、DNS</text>
+
+    <text x="30" y="80" class="cell-text-bold cell-center">6</text>
+    <text x="110" y="80" class="cell-text-bold cell-center">表示层</text>
+    <text x="170" y="76" class="cell-text">数据的格式与表达、加密、压缩</text>
+    <text x="450" y="76" class="cell-text">如字符编码、加密/解密、压缩/解压等</text>
+
+    <text x="30" y="110" class="cell-text-bold cell-center">5</text>
+    <text x="110" y="110" class="cell-text-bold cell-center">会话层</text>
+    <text x="170" y="106" class="cell-text">建立、管理和终止会话</text>
+    <text x="450" y="106" class="cell-text">会话管理、检查点/恢复点等</text>
+
+    <text x="30" y="140" class="cell-text-bold cell-center">4</text>
+    <text x="110" y="140" class="cell-text-bold cell-center">传输层</text>
+    <text x="170" y="136" class="cell-text">端到端的连接</text>
+    <text x="450" y="136" class="cell-text">TCP、UDP</text>
+
+    <text x="30" y="170" class="cell-text-bold cell-center">3</text>
+    <text x="110" y="170" class="cell-text-bold cell-center">网络层</text>
+    <text x="170" y="166" class="cell-text">分组传输和路由选择</text>
+    <text x="450" y="166" class="cell-text">三层交换机、路由器；ARP、RARP、IP、ICMP、IGMP</text>
+
+    <text x="30" y="200" class="cell-text-bold cell-center">2</text>
+    <text x="110" y="200" class="cell-text-bold cell-center">数据链路层</text>
+    <text x="170" y="196" class="cell-text">传送以帧为单位的信息</text>
+    <text x="450" y="192" class="cell-text">网桥、交换机（多端口网桥）、网卡</text>
+    <text x="450" y="208" class="cell-text">PPTP、L2TP、SLIP、PPP</text>
+
+    <text x="30" y="230" class="cell-text-bold cell-center">1</text>
+    <text x="110" y="230" class="cell-text-bold cell-center">物理层</text>
+    <text x="170" y="226" class="cell-text">二进制传输</text>
+    <text x="450" y="226" class="cell-text">中继器、集线器（多端口中继器）</text>
+  </g>
+</svg>

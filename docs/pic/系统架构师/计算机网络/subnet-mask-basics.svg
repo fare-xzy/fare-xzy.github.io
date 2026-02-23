@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="340" viewBox="0 0 880 340">
+  <style>
+    .title { font: bold 18px sans-serif; fill: #222222; }
+    .subtitle { font: 13px sans-serif; fill: #555555; }
+    .box { rx: 8; ry: 8; stroke: #333333; stroke-width: 1; }
+    .box-blue { fill: #e3f2fd; }
+    .box-green { fill: #e8f5e9; }
+    .box-yellow { fill: #fff8e1; }
+    .text-bold { font: bold 12px sans-serif; fill: #222222; }
+    .text { font: 12px sans-serif; fill: #222222; }
+    .small { font: 11px sans-serif; fill: #555555; }
+  </style>
+
+  <rect x="0" y="0" width="880" height="340" fill="#ffffff" />
+
+  <text x="440" y="24" text-anchor="middle" class="title">子网掩码与主机数速记</text>
+  <text x="440" y="44" text-anchor="middle" class="subtitle">网络位 + 主机位 = 32 位，2^h − 2 = 可用主机数</text>
+
+  <g transform="translate(40,60)">
+    <rect x="0" y="0" width="380" height="70" class="box box-blue" />
+    <text x="10" y="20" class="text-bold">1. 子网掩码含义</text>
+    <text x="10" y="40" class="text">掩码为 1 的位表示“网络/子网位”，为 0 的位表示“主机位”。</text>
+    <text x="10" y="58" class="text">示例：255.255.255.192 = /26，前 26 位为 1，后 6 位为主机位。</text>
+
+    <rect x="400" y="0" width="380" height="70" class="box box-green" />
+    <text x="410" y="20" class="text-bold">2. 主机数计算</text>
+    <text x="410" y="40" class="text">主机位数 = h，则可用主机数 = 2^h − 2。</text>
+    <text x="410" y="58" class="text">如 h = 6，主机数 = 64 − 2 = 62 台。</text>
+
+    <rect x="0" y="90" width="780" height="110" class="box box-yellow" />
+    <text x="10" y="110" class="text-bold">3. 常用 C 类子网掩码速查</text>
+    <text x="10" y="132" class="text">/24：255.255.255.0   → 主机位 8 位，2^8 − 2 = 254 主机</text>
+    <text x="10" y="152" class="text">/25：255.255.255.128 → 主机位 7 位，2^7 − 2 = 126 主机（2 个子网）</text>
+    <text x="10" y="172" class="text">/26：255.255.255.192 → 主机位 6 位，2^6 − 2 = 62 主机（4 个子网）</text>
+    <text x="10" y="192" class="text">/27：255.255.255.224 → 主机位 5 位，2^5 − 2 = 30 主机（8 个子网）</text>
+  </g>
+
+  <text x="440" y="310" text-anchor="middle" class="small">
+    记法：C 类网络 /24 起；每从 /24 往右借 1 位，子网数 ×2，单网可用主机数减半。
+  </text>
+</svg>
