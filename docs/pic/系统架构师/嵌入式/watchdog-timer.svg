@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="400" viewBox="0 0 800 400">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+    </marker>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="400" fill="#ffffff" />
+  <text x="400" y="30" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#333">Watchdog Timer (WDT) 工作原理示意图</text>
+
+  <g transform="translate(50, 60)">
+    <text x="150" y="20" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#2e7d32">正常运行 (Normal)</text>
+    <rect x="50" y="50" width="200" height="120" rx="10" ry="10" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" />
+    <text x="150" y="80" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#333">主程序 / 任务循环</text>
+    <text x="150" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#555">执行业务逻辑...</text>
+    <path d="M150,170 L150,230" stroke="#1976d2" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrow)" />
+    <text x="160" y="200" font-family="sans-serif" font-size="12" fill="#1976d2">定期“喂狗” (Kick)</text>
+    <rect x="50" y="230" width="200" height="80" rx="10" ry="10" fill="#fff3e0" stroke="#ef6c00" stroke-width="2" />
+    <text x="150" y="255" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#333">看门狗定时器 (WDT)</text>
+    <text x="150" y="280" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#ef6c00">计数器倒计时...</text>
+    <text x="150" y="340" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#2e7d32">系统持续运行</text>
+  </g>
+
+  <line x1="400" y1="60" x2="400" y2="380" stroke="#ddd" stroke-width="2" stroke-dasharray="5,5" />
+
+  <g transform="translate(450, 60)">
+    <text x="150" y="20" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#c62828">故障发生 (Fault)</text>
+    <rect x="50" y="50" width="200" height="120" rx="10" ry="10" fill="#ffebee" stroke="#c62828" stroke-width="2" />
+    <text x="150" y="80" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#333">主程序 / 任务循环</text>
+    <text x="150" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#c62828" font-weight="bold">死机 / 死循环</text>
+    <text x="150" y="120" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#c62828">无法执行喂狗指令</text>
+    <text x="150" y="200" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#c62828" font-weight="bold">❌ 未能喂狗</text>
+    <rect x="50" y="230" width="200" height="80" rx="10" ry="10" fill="#fff3e0" stroke="#ef6c00" stroke-width="2" />
+    <text x="150" y="255" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#333">看门狗定时器 (WDT)</text>
+    <text x="150" y="280" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#c62828" font-weight="bold">计数器溢出!</text>
+    <path d="M250,270 L300,270 L300,110 L250,110" fill="none" stroke="#c62828" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="310" y="190" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#c62828" writing-mode="tb">触发复位 (RESET)</text>
+    <text x="150" y="340" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#c62828">系统重启恢复</text>
+  </g>
+</svg>
